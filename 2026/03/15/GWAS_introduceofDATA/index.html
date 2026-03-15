@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>GWAS数据的介绍 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="有关PLINK——QC">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GWAS数据的介绍">
+<meta property="og:url" content="http://jsj0513.top/2026/03/15/GWAS_introduceofDATA/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="有关PLINK——QC">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://jsj0513.top/d5133405-290c-4436-b61e-60f8a750f194.png">
+<meta property="article:published_time" content="2026-03-15T08:09:57.427Z">
+<meta property="article:modified_time" content="2025-12-11T13:28:38.474Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="GWAS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://jsj0513.top/d5133405-290c-4436-b61e-60f8a750f194.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://jsj0513.top"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-GWAS_introduceofDATA" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/15/GWAS_introduceofDATA/" class="article-date">
+  <time class="dt-published" datetime="2026-03-15T08:09:57.427Z" itemprop="datePublished">2026-03-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%88%86%E6%9E%90/">生物信息分析</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      GWAS数据的介绍
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="样本数据集"><a href="#样本数据集" class="headerlink" title="样本数据集"></a>样本数据集</h1><p>来自1000个基因组项目第3阶段第5版的504名EAS个体</p>
+<ul>
+<li>-CHB：中国北京的汉族人<br>-JPT：日本东京的日本人<br>-CHS：南方汉族<br>-CDX：中国西双版纳的中国傣族<br>-KHV：金在胡志明市，越南</li>
+</ul>
+<p>Url: <a target="_blank" rel="noopener" href="http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/">http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/</a></p>
+<p>Genome build:  human_g1k_v37.fasta (hg19)</p>
+<p>基因组构建：人类_g1k_v37.fasta（hg19）</p>
+<h2 id="基因型数据处理"><a href="#基因型数据处理" class="headerlink" title="基因型数据处理"></a>基因型数据处理</h2><ul>
+<li>Selected only autosomal variants</li>
+<li>Split multi-allelic variants</li>
+<li>Variants were normalized</li>
+<li>Remove duplicated variants</li>
+<li>Selected only SNP (ATCG)</li>
+<li>Selected 2% rare SNPs (<code>plink --mac 2 --max--maf 0.01 --thin 0.02</code>)</li>
+<li>Selected 15% common SNPs (<code>plink --maf 0.01 --thin 0.15</code>)</li>
+<li>Converted to plink bed format and merged to a single file  </li>
+<li>Randomly added some missing data points</li>
+<li>-仅选择常染色体变异<br>-分裂多等位基因变体<br>-变异已标准化<br>-删除重复的变体<br>-仅选择SNP（ATCG）<br>-选定的2%罕见SNP（“plink-mac 2-max-maf 0.01-thin 0.02”）<br>-选定15%的常见SNP（“plink-maf 0.01-thin 0.15”）<br>-转换为bed格式并合并为单个文件<br>-随机添加了一些缺失的数据点</li>
+</ul>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>note<br>    The sample dataset <code>1KG.EAS.auto.snp.norm.nodup.split.rare002.common015.missing.zip</code> has been included in <code>01_Dataset</code> when you clone the repository. There is no need to download it again if you clone this repository.</p>
+<p>样本数据集’1KG。克隆存储库时，EAS.auto.snp.norm.nodup.split.rare002.common015.inmissing.zip已包含在“01_Dataset”中。如果克隆此存储库，则无需再次下载。</p>
+<p>You can also simply run <code>download_sampledata.sh</code> in <code>01_Dataset</code> and the dataset will be downloaded and decompressed.</p>
+<p>您也可以简单地在“01_Dataset”中运行“download_sampledata.sh”，数据集将被下载并解压缩。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./download_sampledata.sh</span><br></pre></td></tr></table></figure>
+
+<p>warning “Sample dataset is currently hosted on Dropbox which may not be accessible for users in certain regions.”</p>
+<p>or you can manually download it from <a target="_blank" rel="noopener" href="https://www.dropbox.com/scl/fi/41ep8xbdccp9xw5epim19/1KG.EAS.auto.snp.norm.nodup.split.rare002.common015.missing.zip?rlkey=tklapxwypeg79b1sx03o6ycs7&dl=1">this link</a>.</p>
+<p>Unzip the dataset <code>unzip -j 1KG.EAS.auto.snp.norm.nodup.split.rare002.common015.missing.zip</code>, and you will get the following files:</p>
+<p>警告“示例数据集当前托管在Dropbox上，某些地区的用户可能无法访问。”<br>或者您可以从[此链接]手动下载(<a target="_blank" rel="noopener" href="https://www.dropbox.com/scl/fi/41ep8xbdccp9xw5epim19/1KG.EAS.auto.snp.norm.nodup.split.rare002.common015.missing.zip?rlkey=tklapxwypeg79b1sx03o6ycs7&dl=1">https://www.dropbox.com/scl/fi/41ep8xbdccp9xw5epim19/1KG.EAS.auto.snp.norm.nodup.split.rare002.common015.missing.zip?rlkey=tklapxwypeg79b1sx03o6ycs7&amp;dl=1</a>).<br>解压缩数据集<code>Unzip  1KG.EAS.auto.snp.norm.nodup.split.rare002.common015.inmissing.zip</code>，您将获得以下文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1KG.EAS.auto.snp.norm.nodup.split.rare002.common015.missing.bed</span><br><span class="line">1KG.EAS.auto.snp.norm.nodup.split.rare002.common015.missing.bim</span><br><span class="line">1KG.EAS.auto.snp.norm.nodup.split.rare002.common015.missing.fam</span><br></pre></td></tr></table></figure>
+
+<h2 id="表型模拟"><a href="#表型模拟" class="headerlink" title="表型模拟"></a>表型模拟</h2><p>Phenotypes were simply simulated using GCTA with the 1KG EAS dataset.</p>
+<p>使用GCTA和1KG EAS数据集简单模拟表型。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">gcta  \</span><br><span class="line">  --bfile 1KG.EAS.auto.snp.norm.nodup.split.rare002.common015 \</span><br><span class="line">  --simu-cc 250 254  \</span><br><span class="line">  --simu-causal-loci causal.snplist  \</span><br><span class="line">  --simu-hsq 0.8  \</span><br><span class="line">  --simu-k 0.5  \</span><br><span class="line">  --simu-rep 1  \</span><br><span class="line">  --out 1kgeas_binary</span><br><span class="line">$ <span class="built_in">cat</span> causal.snplist</span><br><span class="line">2:55620927:G:A 3</span><br><span class="line">8:97094292:C:T 3</span><br><span class="line">20:42758834:T:C 3</span><br><span class="line">7:134326056:G:T 3</span><br><span class="line">1:167562605:G:A 3</span><br></pre></td></tr></table></figure>
+
+<p>warning<br>    This simulation is just used for showing the analysis pipeline and data format. The trait was simulated under an unreal condition (effect sizes are extremely large) so the result itself is meaningless.   </p>
+<p>此模拟仅用于显示分析管道和数据格式。该特征是在不真实的条件下模拟的（效果大小非常大），因此结果本身毫无意义。</p>
+<p>​    Allele frequency and Effect size</p>
+<p>等位基因频率和效应大小</p>
+<p>​    <img src="/d5133405-290c-4436-b61e-60f8a750f194.png"></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li>1000 Genomes Project Consortium. (2015). A global reference for human genetic variation. Nature, 526(7571), 68.</li>
+<li>Yang, J., Lee, S. H., Goddard, M. E., &amp; Visscher, P. M. (2011). GCTA: a tool for genome-wide complex trait analysis. The American Journal of Human Genetics, 88(1), 76-82.</li>
+</ul>
+<h3 id="PED与BED文件格式在遗传数据分析中的主要区别"><a href="#PED与BED文件格式在遗传数据分析中的主要区别" class="headerlink" title="PED与BED文件格式在遗传数据分析中的主要区别"></a>PED与BED文件格式在遗传数据分析中的主要区别</h3><p><strong>文件结构与编码</strong></p>
+<ul>
+<li><strong>PED格式</strong>：纯文本文件，包含样本系谱信息和基因型数据。前6列为固定系谱字段（家系ID、个体ID、父ID、母ID、性别、表型），后续每两列表示一个SNP的两个等位基因（用1&#x2F;2或A&#x2F;C&#x2F;G&#x2F;T表示）。例如：<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FAM001  ID001  0  0  1  0  A A  G T  1 2</span><br></pre></td></tr></table></figure></li>
+<li><strong>BED格式</strong>：二进制文件（需配合.bim&#x2F;.fam使用），采用紧凑的比特编码。每个基因型用2比特表示：<br>$00$&#x3D;homozygous1, $01$&#x3D;缺失, $10$&#x3D;杂合, $11$&#x3D;homozygous2。无法直接阅读，需专用工具解析</li>
+</ul>
+<p><strong>存储效率</strong></p>
+<ul>
+<li>BED文件大小通常比PED小3-10倍（相同数据集）。例如10万样本×50万SNP的数据：<br>PED约100-500GB，BED仅需10-50GB  </li>
+<li>BED的二进制结构减少磁盘I&#x2F;O，加速数据分析流程</li>
+</ul>
+<p><strong>数据处理性能</strong></p>
+<ul>
+<li>BED格式读取速度比PED快5-20倍（尤其在大规模GWAS中）  </li>
+<li>PLINK处理BED的运算耗时通常为PED的$1&#x2F;3$到$1&#x2F;5$  </li>
+<li>内存消耗：BED加载时内存占用降低30-50%</li>
+</ul>
+<p><strong>应用场景差异</strong></p>
+<ul>
+<li><strong>PED适用</strong>：  <ul>
+<li>小型数据集或交互式分析  </li>
+<li>需要人工查看&#x2F;编辑基因型的场景  </li>
+<li>与传统软件兼容（如FAMOZ, MERLIN）</li>
+</ul>
+</li>
+<li><strong>BED适用</strong>：  <ul>
+<li>百万级样本的GWAS研究  </li>
+<li>云计算&#x2F;高性能计算环境  </li>
+<li>PLINK&#x2F;SAIGE等现代工具流水线</li>
+</ul>
+</li>
+</ul>
+<p><strong>数据完整性</strong></p>
+<ul>
+<li>PED直接包含表型和系谱数据  </li>
+<li>BED需配套.fam（样本信息）和.bim（位点信息）文件：  <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># snp.bim示例</span><br><span class="line">1  rs123  0  100500  A G</span><br><span class="line"># snp.fam示例</span><br><span class="line">FAM001 ID001 0 0 1 0</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://jsj0513.top/2026/03/15/GWAS_introduceofDATA/" data-id="cuid48F3Orwxj4-yHOYiXkw4w" data-title="GWAS数据的介绍" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GWAS/" rel="tag">GWAS</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/03/15/GWAS_visualization/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          GWAS及其可视化
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2026/03/15/end_to_end_chr19/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">端到端实验chr19的微缩版</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/nlp/">nlp</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/">云计算</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/">数学基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%88%86%E6%9E%90/">生物信息分析</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%8B%B1%E8%AF%AD/">英语</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/">计算机组成</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE/">项目</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CNN%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" rel="tag">CNN卷积神经网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/" rel="tag">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GWAS/" rel="tag">GWAS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KVM/" rel="tag">KVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-learning/" rel="tag">Machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PheWAS/" rel="tag">PheWAS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VM/" rel="tag">VM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deeplearning/" rel="tag">deeplearning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-%E6%93%8D%E4%BD%9C/" rel="tag">linux 操作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openVZ/" rel="tag">openVZ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%91%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA/" rel="tag">云平台搭建</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AD%E7%BA%A7/" rel="tag">六级</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%98%E5%BD%A2%E9%87%91%E5%88%9A/" rel="tag">变形金刚</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%88%90%E5%BC%8F%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C/" rel="tag">生成式对抗网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9F%A9%E9%98%B5/" rel="tag">矩阵</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/" rel="tag">自注意力机制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/" rel="tag">计算机组成</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%8D%E5%90%91%E9%87%8F/" rel="tag">词向量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE/" rel="tag">项目</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CNN%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" style="font-size: 10px;">CNN卷积神经网络</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/GWAS/" style="font-size: 20px;">GWAS</a> <a href="/tags/KVM/" style="font-size: 10px;">KVM</a> <a href="/tags/Machine-learning/" style="font-size: 10px;">Machine learning</a> <a href="/tags/PheWAS/" style="font-size: 15px;">PheWAS</a> <a href="/tags/VM/" style="font-size: 10px;">VM</a> <a href="/tags/deeplearning/" style="font-size: 10px;">deeplearning</a> <a href="/tags/linux-%E6%93%8D%E4%BD%9C/" style="font-size: 10px;">linux 操作</a> <a href="/tags/openVZ/" style="font-size: 15px;">openVZ</a> <a href="/tags/%E4%BA%91%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA/" style="font-size: 10px;">云平台搭建</a> <a href="/tags/%E5%85%AD%E7%BA%A7/" style="font-size: 10px;">六级</a> <a href="/tags/%E5%8F%98%E5%BD%A2%E9%87%91%E5%88%9A/" style="font-size: 10px;">变形金刚</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E7%94%9F%E6%88%90%E5%BC%8F%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C/" style="font-size: 10px;">生成式对抗网络</a> <a href="/tags/%E7%9F%A9%E9%98%B5/" style="font-size: 10px;">矩阵</a> <a href="/tags/%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/" style="font-size: 10px;">自注意力机制</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/" style="font-size: 10px;">计算机组成</a> <a href="/tags/%E8%AF%8D%E5%90%91%E9%87%8F/" style="font-size: 10px;">词向量</a> <a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 10px;">项目</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/10/">October 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/03/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/15/%E7%94%9F%E6%88%90%E5%BC%8F%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C/">生成式对抗网络</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/15/%E5%85%AD%E7%BA%A7/">六级</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/15/%E7%9F%A9%E9%98%B5%E5%88%86%E6%9E%90%E6%89%8B%E5%86%99%E7%AC%94%E8%AE%B0/">矩阵分析关键手写笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/15/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/">计算机组成</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

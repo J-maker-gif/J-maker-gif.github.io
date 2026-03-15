@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>PheWAS | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="有关PLINK——QC">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PheWAS">
+<meta property="og:url" content="http://jsj0513.top/2026/03/15/PheWAS/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="有关PLINK——QC">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://jsj0513.top/image-20251216133900035.png">
+<meta property="og:image" content="http://jsj0513.top/image-20251216133942221.png">
+<meta property="og:image" content="http://jsj0513.top/image-20251216134013565.png">
+<meta property="og:image" content="http://jsj0513.top/image-20251216134252856.png">
+<meta property="og:image" content="http://jsj0513.top/image-20251216134626949.png">
+<meta property="og:image" content="http://jsj0513.top/image-20251216134725442.png">
+<meta property="og:image" content="http://jsj0513.top/image-20251216140419576.png">
+<meta property="og:image" content="http://jsj0513.top/image-20251216140656445.png">
+<meta property="og:image" content="http://jsj0513.top/image-20251216141012624.png">
+<meta property="og:image" content="http://jsj0513.top/image-20251216141135441.png">
+<meta property="og:image" content="http://jsj0513.top/visualization_of_PheWAS.png">
+<meta property="article:published_time" content="2026-03-15T08:09:57.447Z">
+<meta property="article:modified_time" content="2025-12-16T06:23:45.232Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="PheWAS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://jsj0513.top/image-20251216133900035.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://jsj0513.top"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-PheWAS" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/15/PheWAS/" class="article-date">
+  <time class="dt-published" datetime="2026-03-15T08:09:57.447Z" itemprop="datePublished">2026-03-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%88%86%E6%9E%90/">生物信息分析</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      PheWAS
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="PheWAS-R语言包示例代码运行"><a href="#PheWAS-R语言包示例代码运行" class="headerlink" title="PheWAS R语言包示例代码运行"></a>PheWAS R语言包示例代码运行</h1><h2 id="1-R环境配置-VSCODE）"><a href="#1-R环境配置-VSCODE）" class="headerlink" title="1.R环境配置(VSCODE）"></a>1.R环境配置(VSCODE）</h2><h3 id="安装vscode（默认已经安装）"><a href="#安装vscode（默认已经安装）" class="headerlink" title="安装vscode（默认已经安装）"></a>安装vscode（默认已经安装）</h3><h3 id="安装R："><a href="#安装R：" class="headerlink" title="安装R："></a>安装R：</h3><p>安装链接<a target="_blank" rel="noopener" href="https://cran.r-project.org/mirrors.html%EF%BC%8C%E9%87%87%E7%94%A8%E5%9B%BD%E5%86%85%E7%9A%84%E6%B8%85%E5%8D%8E%E9%95%9C%E5%83%8F%E7%AB%99">https://cran.r-project.org/mirrors.html，采用国内的清华镜像站</a></p>
+<p><img src="/image-20251216133900035.png" alt="image-20251216133900035"></p>
+<p>选取第一个清华的镜像站</p>
+<p><img src="/image-20251216133942221.png" alt="image-20251216133942221"></p>
+<p>选取适合自己电脑的版本</p>
+<p><img src="/image-20251216134013565.png" alt="image-20251216134013565"></p>
+<p>下载成功</p>
+<p>下载成功后安装的硬盘一般默认C盘，但是不要选择装在C盘，例如我就装在D盘。</p>
+<h3 id="2-VSCODE上安装R语言的相关插件"><a href="#2-VSCODE上安装R语言的相关插件" class="headerlink" title="2.VSCODE上安装R语言的相关插件"></a>2.VSCODE上安装R语言的相关插件</h3><p><img src="/image-20251216134252856.png" alt="image-20251216134252856"></p>
+<p>如果对于编辑的界面有要求可以选择安装R LSP Client插件和Radian的编辑器，（暂时安装不成功，略过）</p>
+<p>3.测试</p>
+<p>建立一个.R的文件，直接编译运行即可</p>
+<p><img src="/image-20251216134626949.png" alt="image-20251216134626949"></p>
+<p>绘图结果：</p>
+<p><img src="/image-20251216134725442.png" alt="image-20251216134725442"></p>
+<h2 id="2-R环境的PheWAS的代码运行"><a href="#2-R环境的PheWAS的代码运行" class="headerlink" title="2.R环境的PheWAS的代码运行"></a>2.R环境的PheWAS的代码运行</h2><h3 id="下载对应的PheWAS的安装包"><a href="#下载对应的PheWAS的安装包" class="headerlink" title="下载对应的PheWAS的安装包"></a>下载对应的PheWAS的安装包</h3><p>The PheWAS R package is designed to provide an accessible interface to the phenome wide association study. </p>
+<p>PheWAS R软件包旨在为全表型关联研究提供一个可访问的界面。</p>
+<p>可以使用devtools包安装PheWAS包。在R中执行以下代码将帮助您开始：</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">install.packages<span class="punctuation">(</span><span class="string">&quot;devtools&quot;</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<p>#可能需要按需安装，因为并非所有包依赖项都由devtools安装：</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">install.packages<span class="punctuation">(</span><span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;dplyr&quot;</span><span class="punctuation">,</span><span class="string">&quot;tidyr&quot;</span><span class="punctuation">,</span><span class="string">&quot;ggplot2&quot;</span><span class="punctuation">,</span><span class="string">&quot;MASS&quot;</span><span class="punctuation">,</span><span class="string">&quot;meta&quot;</span><span class="punctuation">,</span><span class="string">&quot;ggrepel&quot;</span><span class="punctuation">,</span><span class="string">&quot;DT&quot;</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment">#下载所需要的R安装包</span></span><br><span class="line">devtools<span class="operator">::</span>install_github<span class="punctuation">(</span><span class="string">&quot;PheWAS/PheWAS&quot;</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment">#从github上下载对应的处理工具</span></span><br><span class="line">library<span class="punctuation">(</span>PheWAS<span class="punctuation">)</span></span><br><span class="line"><span class="comment">#纳入PheWAS</span></span><br></pre></td></tr></table></figure>
+
+<p>请注意，某些版本的devtools不会安装所有依赖项，因此如果出现错误，可能需要先使用install.packages（）安装那些依赖项。</p>
+<p>有可能在运行对应的代码的同时需要进行某个包的安装，比如Rtools</p>
+<h3 id="正式代码"><a href="#正式代码" class="headerlink" title="正式代码"></a>正式代码</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">vignette<span class="punctuation">(</span><span class="string">&quot;PheWAS-package&quot;</span><span class="punctuation">)</span>  <span class="comment">#打开该R包的帮助文档</span></span><br><span class="line">library<span class="punctuation">(</span>PheWAS<span class="punctuation">)</span>                        <span class="comment">#加载包</span></span><br><span class="line">set.seed<span class="punctuation">(</span><span class="number">1</span><span class="punctuation">)</span>                                 <span class="comment">#设置随机种子</span></span><br><span class="line">ex<span class="operator">=</span>generateExample<span class="punctuation">(</span><span class="punctuation">)</span>             <span class="comment">#产生测试数据</span></span><br><span class="line"><span class="comment">#提取list中的三个部分</span></span><br><span class="line">id.vocab.code.count<span class="operator">=</span>ex<span class="operator">$</span>id.vocab.code.count</span><br><span class="line">genotypes<span class="operator">=</span>ex<span class="operator">$</span>genotypes        <span class="comment">#基因型文件</span></span><br><span class="line">id.sex<span class="operator">=</span>ex<span class="operator">$</span>id.sex                        <span class="comment">#性别，作为协变量</span></span><br><span class="line"><span class="comment">#创建phecode表-翻译代码</span></span><br><span class="line">phenotypes<span class="operator">=</span>createPhenotypes<span class="punctuation">(</span>id.vocab.code.count<span class="punctuation">,</span> aggregate.fun<span class="operator">=</span><span class="built_in">sum</span><span class="punctuation">,</span> id.sex<span class="operator">=</span>id.sex<span class="punctuation">)</span></span><br><span class="line"><span class="comment">#运行PheWAS</span></span><br><span class="line">results<span class="operator">=</span>phewas<span class="punctuation">(</span>phenotypes<span class="punctuation">,</span>genotypes<span class="punctuation">,</span>cores<span class="operator">=</span><span class="number">1</span><span class="punctuation">)</span>      </span><br><span class="line"><span class="comment">#绘图</span></span><br><span class="line">phewasManhattan<span class="punctuation">(</span>results<span class="punctuation">,</span> annotate.angle<span class="operator">=</span><span class="number">0</span><span class="punctuation">,</span>title<span class="operator">=</span><span class="string">&quot;My Example PheWAS Manhattan Plot&quot;</span><span class="punctuation">)</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>最终的绘图：</p>
+<p>可以判断这个SNP与某种表型之间的关联性，有些较高，有些较低。</p>
+<p>对应产生的四个中间文件：</p>
+<p>1.phenotypes（表型文件）</p>
+<p><img src="/image-20251216140419576.png" alt="image-20251216140419576"></p>
+<p>第一列是对用的个体的id,之后的编号是对应的表型，True代表患病，False代表不患病，NA代表该表型缺失。</p>
+<p>2.genotypes（基因型文件）</p>
+<p><img src="/image-20251216140656445.png" alt="image-20251216140656445"></p>
+<p>id代表的是个人的编号，0，1，2分别代表显性纯合子，杂合子，隐形纯合子，对应的控制同一表型的等位基因为1对2个。</p>
+<p>3.id.vocab.code.count</p>
+<p><img src="/image-20251216141012624.png" alt="image-20251216141012624"></p>
+<p>第一列ID:代表的是个体编号(在人中就是不同的个体)。<br>第二列vocabulary_id:代表采用哪种编码规则(ICD9CM&#x2F;ICD10CM)。<br>第三列code:相应的数字和字母代表一种表型。<br>第四列count:计数。</p>
+<p>4.results（经过PheWAS分析的结果文档）</p>
+<p><img src="/image-20251216141135441.png" alt="image-20251216141135441"></p>
+<p>其中比较重要的就是对应的p值和对应的表型编号。</p>
+<p>最终的曼哈顿图</p>
+<p><img src="/visualization_of_PheWAS.png"></p>
+<p>只要对应自己的文档可以修改成这样的形式，也可以用来进行表型的分析。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://jsj0513.top/2026/03/15/PheWAS/" data-id="cuidE4JaMgHH41-hpg3LQyqDo" data-title="PheWAS" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PheWAS/" rel="tag">PheWAS</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/03/15/PLINKTOSAMPLEQC/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          PLINK工具用于数据的质量控制QC
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2026/03/15/PCA_in_GWAS/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">PCA在GWAS中的应用</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/nlp/">nlp</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/">云计算</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/">数学基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%88%86%E6%9E%90/">生物信息分析</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%8B%B1%E8%AF%AD/">英语</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/">计算机组成</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE/">项目</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CNN%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" rel="tag">CNN卷积神经网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/" rel="tag">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GWAS/" rel="tag">GWAS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KVM/" rel="tag">KVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-learning/" rel="tag">Machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PheWAS/" rel="tag">PheWAS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VM/" rel="tag">VM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deeplearning/" rel="tag">deeplearning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-%E6%93%8D%E4%BD%9C/" rel="tag">linux 操作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openVZ/" rel="tag">openVZ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%91%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA/" rel="tag">云平台搭建</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AD%E7%BA%A7/" rel="tag">六级</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%98%E5%BD%A2%E9%87%91%E5%88%9A/" rel="tag">变形金刚</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%88%90%E5%BC%8F%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C/" rel="tag">生成式对抗网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9F%A9%E9%98%B5/" rel="tag">矩阵</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/" rel="tag">自注意力机制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/" rel="tag">计算机组成</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%8D%E5%90%91%E9%87%8F/" rel="tag">词向量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE/" rel="tag">项目</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CNN%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" style="font-size: 10px;">CNN卷积神经网络</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/GWAS/" style="font-size: 20px;">GWAS</a> <a href="/tags/KVM/" style="font-size: 10px;">KVM</a> <a href="/tags/Machine-learning/" style="font-size: 10px;">Machine learning</a> <a href="/tags/PheWAS/" style="font-size: 15px;">PheWAS</a> <a href="/tags/VM/" style="font-size: 10px;">VM</a> <a href="/tags/deeplearning/" style="font-size: 10px;">deeplearning</a> <a href="/tags/linux-%E6%93%8D%E4%BD%9C/" style="font-size: 10px;">linux 操作</a> <a href="/tags/openVZ/" style="font-size: 15px;">openVZ</a> <a href="/tags/%E4%BA%91%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA/" style="font-size: 10px;">云平台搭建</a> <a href="/tags/%E5%85%AD%E7%BA%A7/" style="font-size: 10px;">六级</a> <a href="/tags/%E5%8F%98%E5%BD%A2%E9%87%91%E5%88%9A/" style="font-size: 10px;">变形金刚</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E7%94%9F%E6%88%90%E5%BC%8F%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C/" style="font-size: 10px;">生成式对抗网络</a> <a href="/tags/%E7%9F%A9%E9%98%B5/" style="font-size: 10px;">矩阵</a> <a href="/tags/%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/" style="font-size: 10px;">自注意力机制</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/" style="font-size: 10px;">计算机组成</a> <a href="/tags/%E8%AF%8D%E5%90%91%E9%87%8F/" style="font-size: 10px;">词向量</a> <a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 10px;">项目</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/10/">October 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/03/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/15/%E7%94%9F%E6%88%90%E5%BC%8F%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C/">生成式对抗网络</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/15/%E5%85%AD%E7%BA%A7/">六级</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/15/%E7%9F%A9%E9%98%B5%E5%88%86%E6%9E%90%E6%89%8B%E5%86%99%E7%AC%94%E8%AE%B0/">矩阵分析关键手写笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/15/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/">计算机组成</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://jsj0513.top/page/3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://jsj0513.top"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-GWAS_introduceofDATA" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/15/GWAS_introduceofDATA/" class="article-date">
+  <time class="dt-published" datetime="2026-03-15T08:09:57.427Z" itemprop="datePublished">2026-03-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%88%86%E6%9E%90/">生物信息分析</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/15/GWAS_introduceofDATA/">GWAS数据的介绍</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="样本数据集"><a href="#样本数据集" class="headerlink" title="样本数据集"></a>样本数据集</h1><p>来自1000个基因组项目第3阶段第5版的504名EAS个体</p>
+<ul>
+<li>-CHB：中国北京的汉族人<br>-JPT：日本东京的日本人<br>-CHS：南方汉族<br>-CDX：中国西双版纳的中国傣族<br>-KHV：金在胡志明市，越南</li>
+</ul>
+<p>Url: <a target="_blank" rel="noopener" href="http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/">http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/</a></p>
+<p>Genome build:  human_g1k_v37.fasta (hg19)</p>
+<p>基因组构建：人类_g1k_v37.fasta（hg19）</p>
+<h2 id="基因型数据处理"><a href="#基因型数据处理" class="headerlink" title="基因型数据处理"></a>基因型数据处理</h2><ul>
+<li>Selected only autosomal variants</li>
+<li>Split multi-allelic variants</li>
+<li>Variants were normalized</li>
+<li>Remove duplicated variants</li>
+<li>Selected only SNP (ATCG)</li>
+<li>Selected 2% rare SNPs (<code>plink --mac 2 --max--maf 0.01 --thin 0.02</code>)</li>
+<li>Selected 15% common SNPs (<code>plink --maf 0.01 --thin 0.15</code>)</li>
+<li>Converted to plink bed format and merged to a single file  </li>
+<li>Randomly added some missing data points</li>
+<li>-仅选择常染色体变异<br>-分裂多等位基因变体<br>-变异已标准化<br>-删除重复的变体<br>-仅选择SNP（ATCG）<br>-选定的2%罕见SNP（“plink-mac 2-max-maf 0.01-thin 0.02”）<br>-选定15%的常见SNP（“plink-maf 0.01-thin 0.15”）<br>-转换为bed格式并合并为单个文件<br>-随机添加了一些缺失的数据点</li>
+</ul>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>note<br>    The sample dataset <code>1KG.EAS.auto.snp.norm.nodup.split.rare002.common015.missing.zip</code> has been included in <code>01_Dataset</code> when you clone the repository. There is no need to download it again if you clone this repository.</p>
+<p>样本数据集’1KG。克隆存储库时，EAS.auto.snp.norm.nodup.split.rare002.common015.inmissing.zip已包含在“01_Dataset”中。如果克隆此存储库，则无需再次下载。</p>
+<p>You can also simply run <code>download_sampledata.sh</code> in <code>01_Dataset</code> and the dataset will be downloaded and decompressed.</p>
+<p>您也可以简单地在“01_Dataset”中运行“download_sampledata.sh”，数据集将被下载并解压缩。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./download_sampledata.sh</span><br></pre></td></tr></table></figure>
+
+<p>warning “Sample dataset is currently hosted on Dropbox which may not be accessible for users in certain regions.”</p>
+<p>or you can manually download it from <a target="_blank" rel="noopener" href="https://www.dropbox.com/scl/fi/41ep8xbdccp9xw5epim19/1KG.EAS.auto.snp.norm.nodup.split.rare002.common015.missing.zip?rlkey=tklapxwypeg79b1sx03o6ycs7&dl=1">this link</a>.</p>
+<p>Unzip the dataset <code>unzip -j 1KG.EAS.auto.snp.norm.nodup.split.rare002.common015.missing.zip</code>, and you will get the following files:</p>
+<p>警告“示例数据集当前托管在Dropbox上，某些地区的用户可能无法访问。”<br>或者您可以从[此链接]手动下载(<a target="_blank" rel="noopener" href="https://www.dropbox.com/scl/fi/41ep8xbdccp9xw5epim19/1KG.EAS.auto.snp.norm.nodup.split.rare002.common015.missing.zip?rlkey=tklapxwypeg79b1sx03o6ycs7&dl=1">https://www.dropbox.com/scl/fi/41ep8xbdccp9xw5epim19/1KG.EAS.auto.snp.norm.nodup.split.rare002.common015.missing.zip?rlkey=tklapxwypeg79b1sx03o6ycs7&amp;dl=1</a>).<br>解压缩数据集<code>Unzip  1KG.EAS.auto.snp.norm.nodup.split.rare002.common015.inmissing.zip</code>，您将获得以下文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1KG.EAS.auto.snp.norm.nodup.split.rare002.common015.missing.bed</span><br><span class="line">1KG.EAS.auto.snp.norm.nodup.split.rare002.common015.missing.bim</span><br><span class="line">1KG.EAS.auto.snp.norm.nodup.split.rare002.common015.missing.fam</span><br></pre></td></tr></table></figure>
+
+<h2 id="表型模拟"><a href="#表型模拟" class="headerlink" title="表型模拟"></a>表型模拟</h2><p>Phenotypes were simply simulated using GCTA with the 1KG EAS dataset.</p>
+<p>使用GCTA和1KG EAS数据集简单模拟表型。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">gcta  \</span><br><span class="line">  --bfile 1KG.EAS.auto.snp.norm.nodup.split.rare002.common015 \</span><br><span class="line">  --simu-cc 250 254  \</span><br><span class="line">  --simu-causal-loci causal.snplist  \</span><br><span class="line">  --simu-hsq 0.8  \</span><br><span class="line">  --simu-k 0.5  \</span><br><span class="line">  --simu-rep 1  \</span><br><span class="line">  --out 1kgeas_binary</span><br><span class="line">$ <span class="built_in">cat</span> causal.snplist</span><br><span class="line">2:55620927:G:A 3</span><br><span class="line">8:97094292:C:T 3</span><br><span class="line">20:42758834:T:C 3</span><br><span class="line">7:134326056:G:T 3</span><br><span class="line">1:167562605:G:A 3</span><br></pre></td></tr></table></figure>
+
+<p>warning<br>    This simulation is just used for showing the analysis pipeline and data format. The trait was simulated under an unreal condition (effect sizes are extremely large) so the result itself is meaningless.   </p>
+<p>此模拟仅用于显示分析管道和数据格式。该特征是在不真实的条件下模拟的（效果大小非常大），因此结果本身毫无意义。</p>
+<p>​    Allele frequency and Effect size</p>
+<p>等位基因频率和效应大小</p>
+<p>​    <img src="/d5133405-290c-4436-b61e-60f8a750f194.png"></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li>1000 Genomes Project Consortium. (2015). A global reference for human genetic variation. Nature, 526(7571), 68.</li>
+<li>Yang, J., Lee, S. H., Goddard, M. E., &amp; Visscher, P. M. (2011). GCTA: a tool for genome-wide complex trait analysis. The American Journal of Human Genetics, 88(1), 76-82.</li>
+</ul>
+<h3 id="PED与BED文件格式在遗传数据分析中的主要区别"><a href="#PED与BED文件格式在遗传数据分析中的主要区别" class="headerlink" title="PED与BED文件格式在遗传数据分析中的主要区别"></a>PED与BED文件格式在遗传数据分析中的主要区别</h3><p><strong>文件结构与编码</strong></p>
+<ul>
+<li><strong>PED格式</strong>：纯文本文件，包含样本系谱信息和基因型数据。前6列为固定系谱字段（家系ID、个体ID、父ID、母ID、性别、表型），后续每两列表示一个SNP的两个等位基因（用1&#x2F;2或A&#x2F;C&#x2F;G&#x2F;T表示）。例如：<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FAM001  ID001  0  0  1  0  A A  G T  1 2</span><br></pre></td></tr></table></figure></li>
+<li><strong>BED格式</strong>：二进制文件（需配合.bim&#x2F;.fam使用），采用紧凑的比特编码。每个基因型用2比特表示：<br>$00$&#x3D;homozygous1, $01$&#x3D;缺失, $10$&#x3D;杂合, $11$&#x3D;homozygous2。无法直接阅读，需专用工具解析</li>
+</ul>
+<p><strong>存储效率</strong></p>
+<ul>
+<li>BED文件大小通常比PED小3-10倍（相同数据集）。例如10万样本×50万SNP的数据：<br>PED约100-500GB，BED仅需10-50GB  </li>
+<li>BED的二进制结构减少磁盘I&#x2F;O，加速数据分析流程</li>
+</ul>
+<p><strong>数据处理性能</strong></p>
+<ul>
+<li>BED格式读取速度比PED快5-20倍（尤其在大规模GWAS中）  </li>
+<li>PLINK处理BED的运算耗时通常为PED的$1&#x2F;3$到$1&#x2F;5$  </li>
+<li>内存消耗：BED加载时内存占用降低30-50%</li>
+</ul>
+<p><strong>应用场景差异</strong></p>
+<ul>
+<li><strong>PED适用</strong>：  <ul>
+<li>小型数据集或交互式分析  </li>
+<li>需要人工查看&#x2F;编辑基因型的场景  </li>
+<li>与传统软件兼容（如FAMOZ, MERLIN）</li>
+</ul>
+</li>
+<li><strong>BED适用</strong>：  <ul>
+<li>百万级样本的GWAS研究  </li>
+<li>云计算&#x2F;高性能计算环境  </li>
+<li>PLINK&#x2F;SAIGE等现代工具流水线</li>
+</ul>
+</li>
+</ul>
+<p><strong>数据完整性</strong></p>
+<ul>
+<li>PED直接包含表型和系谱数据  </li>
+<li>BED需配套.fam（样本信息）和.bim（位点信息）文件：  <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># snp.bim示例</span><br><span class="line">1  rs123  0  100500  A G</span><br><span class="line"># snp.fam示例</span><br><span class="line">FAM001 ID001 0 0 1 0</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://jsj0513.top/2026/03/15/GWAS_introduceofDATA/" data-id="cuid48F3Orwxj4-yHOYiXkw4w" data-title="GWAS数据的介绍" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GWAS/" rel="tag">GWAS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-end_to_end_chr19" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/15/end_to_end_chr19/" class="article-date">
+  <time class="dt-published" datetime="2026-03-15T08:09:57.425Z" itemprop="datePublished">2026-03-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%88%86%E6%9E%90/">生物信息分析</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/15/end_to_end_chr19/">端到端实验chr19的微缩版</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><img src="/image-20260106212102225.png" alt="image-20260106212102225"></p>
+<h1 id="End-to-end-target-discovery-with-GWAS-and-PheWAS-19号染色体微缩版"><a href="#End-to-end-target-discovery-with-GWAS-and-PheWAS-19号染色体微缩版" class="headerlink" title="End-to-end target discovery with GWAS and PheWAS(19号染色体微缩版)"></a>End-to-end target discovery with GWAS and PheWAS(19号染色体微缩版)</h1><h1 id="1-实验介绍"><a href="#1-实验介绍" class="headerlink" title="1.实验介绍"></a>1.实验介绍</h1><p>本实验源于<a target="_blank" rel="noopener" href="https://dnanexus.gitbook.io/uk-biobank-rap/science-corner/end-to-end-target-discovery-with-gwas-and-phewas#genome-data">End-to-end target discovery with GWAS and PheWAS | Research Analysis Platform</a>的端对端的基因组靶点发现，以缺血性心脏病作为表型示例。分析的第一步时建立病例组和对照组。之后对于队列的样本数据进行筛选。之后对于基因组数据，芯片数据和插补数据及逆行清洗处理。接着展开局部部分的GWAS分析，并采用连锁不平衡聚类方法整合出显著的关联变异位点。最后针对每个变异位点进行表型关联分析（PheWAS）</p>
+<p><img src="/image-20260106222407942.png" alt="image-20260106222407942"></p>
+<h2 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h2><h3 id="基因组数据"><a href="#基因组数据" class="headerlink" title="基因组数据"></a>基因组数据</h3><p>采用了两种基因组数据：芯片数据（array data）和插补数据（imputed data）。在处理连锁不平衡现象时仅用了插补数据.</p>
+<h3 id="表型数据"><a href="#表型数据" class="headerlink" title="表型数据"></a>表型数据</h3><p>首先选择缺血性心脏病作为目标表型（ICD-10编码I20-I25），同时为样本质量控制检索了以下字段：</p>
+<ul>
+<li>31 - <a target="_blank" rel="noopener" href="https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=31">Sex</a></li>
+<li>22001 - <a target="_blank" rel="noopener" href="https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=22001">Genetic sex</a> 22001 - 遗传性别 </li>
+<li>22006 - <a target="_blank" rel="noopener" href="https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=22006">Genetic ethnic grouping</a>22006 - 基因族裔分组</li>
+<li>22019 - <a target="_blank" rel="noopener" href="https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=22019">Sex chromosome aneuploidy</a>22019 - 性染色体非整倍体</li>
+<li>22020 - <a target="_blank" rel="noopener" href="https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=22020">Used in genetic principal components</a>22020 - 用于遗传主成分分析</li>
+</ul>
+<p>为提高统计效能，并减少假阳性可能，GWAS和PheWAS使用了以下的协变量</p>
+<ul>
+<li>31 - <a target="_blank" rel="noopener" href="https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=31">Sex</a></li>
+<li>2966 - <a target="_blank" rel="noopener" href="https://biobank.ctsu.ox.ac.uk/crystal/field.cgi?id=2966">Age high blood pressure diagnosed</a> (not used in PheWAS)2966 - 高血压确诊年龄（未用于PheWAS）</li>
+<li>21022 - <a target="_blank" rel="noopener" href="https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=21022">Age at recruitment</a>21022 - 招募时的年龄</li>
+<li>23104 - <a target="_blank" rel="noopener" href="https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=23104">Body mass index (BMI)</a>23104 - 身体质量指数（BMI）</li>
+<li>20160 - <a target="_blank" rel="noopener" href="https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=20160">Ever smoked</a> 20160 - 曾经吸过烟 </li>
+<li>30760 - <a target="_blank" rel="noopener" href="https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=30760">HDL cholesterol</a> (not used in PheWAS)30760 - 高密度脂蛋白胆固醇（未用于苯丙酮尿症基因组关联研究）</li>
+<li>30780 - <a target="_blank" rel="noopener" href="https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=30780">LDL direct</a> (not used in PheWAS)30780 - LDL直接检测（未用于苯丙酮尿症关联分析）</li>
+<li>22009 - <a target="_blank" rel="noopener" href="https://biobank.ndph.ox.ac.uk/showcase/field.cgi?id=22009">Genetic principal components</a>22009 - 遗传主成分分析</li>
+</ul>
+<h2 id="2-创建队列"><a href="#2-创建队列" class="headerlink" title="2.创建队列"></a>2.创建队列</h2><p>创建好队列，就可以用于后续分析(GWAS),本分析所采用的表型比较简单，但实际上可能包含多个字段。</p>
+<p>首先，使用队列浏览器创建选定的队列。通过在字段41270中选择具有I20-I25缺血性心脏病的参与者，创建了”ischemic_cases”队列。 “ischemic_controls”队列通过在”ischemic_cases”中使用”队列比较：非”选项创建。最终形成包含57,383例”ischemic_cases”和445,027例”ischemic_controls”的样本。</p>
+<h3 id="UI界面"><a href="#UI界面" class="headerlink" title="UI界面"></a>UI界面</h3><p>1.在RAP中，请点击”管理”选项卡下的目标数据集。如下方图片所示，点击数据集名称即可进入队列浏览器页面。</p>
+<p><img src="/image-20260106224123340.png" alt="image-20260106224123340"></p>
+<p>2.然后，点击“添加筛选器”按钮。在搜索栏中输入“缺血性心脏病”（ischaemic heart disease），并选择“诊断 - ICD10”（数据字段为41270）。点击“添加队列筛选器”确认选择。</p>
+<p><img src="/image-20260106224246636.png" alt="image-20260106224246636"></p>
+<p>3.在“包含以下任何一项”Includes any of的模态提示框中，输入“I20-I25 缺血性心脏病”(I20-I25 Ischaemic heart disease)并选择该选项。然后点击“应用筛选器”(<strong>Apply Filter</strong> )按钮</p>
+<p>4.命名队列。在此示例中，队列名为“ischemic_cases”（注：示例队列名称采用美式拼写，但提及特定UKB数据字段时将使用英式拼写）</p>
+<h3 id="创建对照组"><a href="#创建对照组" class="headerlink" title="创建对照组"></a>创建对照组</h3><p>1.要创建对照组，请点击“+”按钮（鼠标悬停提示：“比较&#x2F;合并队列”（Compare&#x2F;combine cohort））。</p>
+<p><img src="/image-20260106224553113.png" alt="image-20260106224553113"></p>
+<p>2.从下拉菜单中选择“不在缺血病例中”选项，并应用此筛选条件。</p>
+<p><img src="/image-20260106224925531.png" alt="image-20260106224925531"></p>
+<p>3.命名并保存该队列。在此示例中，”ischemic_cases”队列包含57,383个样本，而”ischemic_controls”队列包含445,027个样本。（病例组和对照组都需要进行保存，以便在对应的个体质量控制进行）</p>
+<h2 id="样本质量控制"><a href="#样本质量控制" class="headerlink" title="样本质量控制"></a>样本质量控制</h2><p>样本清理可降低数据噪声，提高全基因组关联分析结果的准确性。例如，通过检查性别不一致和性染色体非整倍体，可排除可能的样本混淆和基因分型错误。通过仅选择单一人群（白人英国人），最大限度地减少了群体亚结构的影响。为验证表型与基因型的关联性，在选择用于计算主成分分析的样本时，仅选取了非亲属参与者的样本。</p>
+<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>样本质量控制的代码可在gwas-phenotype-samples-qc.ipynb中找到。使用dx extract_dataset将每个队列的表型数据提取为表格。随后，根据以下标准筛选样本</p>
+<p>-<br>  Sex and genetic sex are the same性别与遗传性别相同</p>
+<ul>
+<li>Participant has White British ancestry参与者具有白人英国血统</li>
+<li>Not sex chromosome aneuploidy   非性染色体非整倍体 </li>
+<li>Participant was used to calculate PCA (only non-relatives were included)使用参与者数据计算PCA（仅包含非亲属个体）</li>
+</ul>
+<p>过滤后，”缺血病例”组和”缺血对照”组分别保留了38,197个和298,886个样本。</p>
+<h4 id="表型插值示例"><a href="#表型插值示例" class="headerlink" title="表型插值示例"></a>表型插值示例</h4><p>质量控制后，协变量作为全基因组关联分析流程的一部分进行了插补。协变量及上述笔记本代码对数据进行清理的操作摘要如下：</p>
+<p>-<br>  Age high blood pressure diagnosed in participant (2966) field 参与者（2966）高血压确诊年龄字段</p>
+<ul>
+<li>The code combines all instances and create the hypertension boolean variable该代码将所有实例合并，并创建高血压布尔变量。</li>
+<li>Participant ever smoked 参与者是否曾吸烟 <ul>
+<li>The code makes all missing values as 0该代码将所有缺失值设为0。</li>
+</ul>
+</li>
+<li>Participant body mass index (BMI), HDL cholesterol, direct LDL参与者体重指数（BMI）、高密度脂蛋白胆固醇、直接低密度脂蛋白<ul>
+<li>The code replaces missing values by mean for that variable该代码用该变量的均值替换缺失值。</li>
+</ul>
+</li>
+</ul>
+<p>table contained 38,197 cases and 298,886 controls.     随后，表型数据与可获得插补数据的样本列表进行了合并。最终生成的表格包含38,197例病例和298,886例对照。</p>
+<h4 id="样本质量控制代码"><a href="#样本质量控制代码" class="headerlink" title="样本质量控制代码"></a>样本质量控制代码</h4><p><img src="/get_qc_02.png" alt="get_qc_02"><img src="/get_qc_01.png" alt="get_qc_01"></p>
+<p><img src="/get_qc_03.png" alt="get_qc_03"></p>
+<p><img src="/get_qc_04.png" alt="get_qc_04"></p>
+<p><img src="/get_qc_05.png" alt="get_qc_05"></p>
+<p><img src="/get_qc_06.png" alt="get_qc_06"></p>
+<p><img src="/get_qc_07.png" alt="get_qc_07"></p>
+<p><img src="/get_qc_08.png" alt="get_qc_08"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://jsj0513.top/2026/03/15/end_to_end_chr19/" data-id="cuidFRowfQ_wZUGu1wawRALva" data-title="端到端实验chr19的微缩版" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PheWAS/" rel="tag">PheWAS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Docker" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/15/Docker/" class="article-date">
+  <time class="dt-published" datetime="2026-03-15T08:09:57.422Z" itemprop="datePublished">2026-03-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/">云计算</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/15/Docker/">Docker环境配置</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="山东大学-计算机科学与技术-学院"><a href="#山东大学-计算机科学与技术-学院" class="headerlink" title="山东大学  计算机科学与技术  学院"></a>山东大学  计算机科学与技术  学院</h1><h1 id="云计算技术-课程实验报告"><a href="#云计算技术-课程实验报告" class="headerlink" title="云计算技术  课程实验报告"></a>云计算技术  课程实验报告</h1><table>
+<thead>
+<tr>
+<th>学号：202000130199</th>
+<th>姓名： 荆树吉</th>
+<th>班级： 20 数据</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>实验题目：虚拟化技术练习四Docker</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>实验学时：2</td>
+<td>实验日期：  2023.4.15</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="实验目的："><a href="#实验目的：" class="headerlink" title="实验目的："></a>实验目的：</h2><p>熟悉Docker虚拟化环境。</p>
+<p>具体包括：了解Docker虚拟化环境的配置和部署，完成实验环境及实验工具的熟悉，包括使用官方镜像运行容器，以及借助官方镜像构建、运行自己的镜像和容器，撰写实验报告。</p>
+<h2 id="硬件环境"><a href="#硬件环境" class="headerlink" title="硬件环境:"></a>硬件环境:</h2><p> 联网的计算机一台</p>
+<h2 id="软件环境："><a href="#软件环境：" class="headerlink" title="软件环境："></a>软件环境：</h2><p>.15.0-69-generic #76~20.04.1-Ubuntu SMP Mon Mar 20 15:54:19 UTC 2023 x86_64 x86_64 x86_64 GNU&#x2F;Linux</p>
+<h2 id="实验步骤与内容："><a href="#实验步骤与内容：" class="headerlink" title="实验步骤与内容："></a>实验步骤与内容：</h2><ol>
+<li><h3 id="了解Docker虚拟化环境的配置和部署"><a href="#了解Docker虚拟化环境的配置和部署" class="headerlink" title="了解Docker虚拟化环境的配置和部署"></a>了解Docker虚拟化环境的配置和部署</h3><p>sudo apt-get -y install docker.io</p>
+<p>安装完成后执行 docker，表明安装成功。</p>
+<p>sudo docker pull ubuntu</p>
+<p>安装完成之后默认会启动docker服务，如果没有启动和正常服务一样启动就好</p>
+<p>docker version</p>
+<p><img src="/clip_image002.png" alt="docker version"></p>
+</li>
+<li><h3 id="使用官方镜像运行容器"><a href="#使用官方镜像运行容器" class="headerlink" title="使用官方镜像运行容器"></a>使用官方镜像运行容器</h3><p>查看下载到本地的所有镜像</p>
+<p>docker images</p>
+<p><img src="/clip_image002-1681821166374-16.png" alt="docker images"></p>
+<p> 查看容器</p>
+<p> docker ps -a</p>
+<p><img src="/clip_image004.png" alt="查看容器"></p>
+<p>删除镜像</p>
+<p>docker rmi +镜像名</p>
+<p>docker rmi +镜像标签</p>
+<p><img src="/clip_image006.png" alt="删除镜像"></p>
+<p>下载镜像</p>
+<p>docker pull +镜像名</p>
+<p><img src="/clip_image008.png" alt="下载镜像"></p>
+<p>查看是否拉入镜像</p>
+<p><img src="/clip_image010.png" alt="查看是否拉入镜像"></p>
+<p>已拉入</p>
+<p>创建容器</p>
+<p>docker create -it cengos:7 &#x2F;bin&#x2F;bash  &#x2F;&#x2F;创建一个新的容器但不启动它 #&#x2F;bin&#x2F;bash 交互   对应的镜像名</p>
+<p>#选项：</p>
+<p>-i ：  让容器的标准输入保持打开</p>
+<p>-t ：  分配一个伪终端</p>
+<p>-d ：  后台守护进程的方式运行</p>
+<p>#去查询容器会发现状态为Created</p>
+<p><img src="/clip_image012.png" alt="查看容器"></p>
+<p>启动容器</p>
+<p>docker start 容器ID</p>
+<p>打开刚刚创建的容器</p>
+<p><img src="/clip_image014.png" alt="启动容器"></p>
+<p>停止容器</p>
+<p>docker stop 容器id</p>
+<p>停止刚刚打开的容器</p>
+<p><img src="/clip_image016.png" alt="停止容器"></p>
+<p>容器已经被停止</p>
+</li>
+<li><h3 id="借助官方镜像构建、运行自己的镜像和容器"><a href="#借助官方镜像构建、运行自己的镜像和容器" class="headerlink" title="借助官方镜像构建、运行自己的镜像和容器"></a>借助官方镜像构建、运行自己的镜像和容器</h3><h4 id="①-建立dockerfile文件"><a href="#①-建立dockerfile文件" class="headerlink" title="① 建立dockerfile文件"></a>① 建立dockerfile文件</h4><p>（1） 新建工作目录dockertest，并新建Dockerfile。使用的命令如下：</p>
+<p>mkdir dockertest</p>
+<p>cd dockertest</p>
+<p>touch Dockerfile </p>
+<p>​       使用ls查看当前目录下的文件</p>
+<p>​        <img src="/clip_image002-1681821353211-25.png" alt="查看当前文件"></p>
+<p>（2） 使用vim编辑Dockerfile</p>
+<p><img src="/clip_image004-1681821353212-26.png" alt="vim编辑Dockerfile"></p>
+<p>其中，</p>
+<p>  FROM ：定制的镜像都是基于 FROM 的镜像，也就是说，你的docker容器的系统。这里用的是ubuntu:latest，详细用法不再这里介绍，你可以在dockerhub上找其他的镜像。</p>
+<p>  WORKDIR：你的工作目录，当你运行容器后，是一个ubuntu系统，在根目录会建立一个Mydata的目录。</p>
+<p>  RUN：你可以暂且理解为制定镜像时，为ubuntu系统配置环境，安装一些包的命令执行过程。这里的run是我要配置一个opencv环境所要进行的操作，你可以按照你自己的需求来。</p>
+<p>  CMD：执行docker run时默认执行的命令，docker在运行时可以指定新的命令来替代镜像设置中的这个默认命令，比如，ubuntu 镜像默认的 CMD 是 &#x2F;bin&#x2F;bash，如果我们直接 docker run -it ubuntu 的话，会直接进入 bash。我们也可以在运行时指定运行别的命令，如 docker run -it ubuntu cat &#x2F;etc&#x2F;os-release。这就是用 cat &#x2F;etc&#x2F;os-release 命令替换了默认的 &#x2F;bin&#x2F;bash 命令了，输出了系统版本信息。</p>
+<h4 id="②-制作docker镜像"><a href="#②-制作docker镜像" class="headerlink" title="② 制作docker镜像"></a>② 制作docker镜像</h4><p>在有Dockfile的这个目录下，执行该命令:</p>
+<p>​    sudo docker build -t ubuntudocker:new .</p>
+<p>​    由于自建的镜像较大，故只提供部分截图</p>
+<p>​    <img src="/clip_image002-1681821409004-29.png" alt="建立镜像"></p>
+<p>​     可以使用下面的命令浏览有哪些镜像：</p>
+<p><img src="/clip_image004-1681821409005-30.png" alt="浏览镜像"></p>
+<h4 id="③运行docker容器"><a href="#③运行docker容器" class="headerlink" title="③运行docker容器"></a>③运行docker容器</h4><p><img src="/clip_image002-1681821468607-33.png" alt="运行并使用容器"></p>
+<p>内部容器已经可以使用python3.10.6环境</p>
+<p>打包镜像同上</p>
+</li>
+</ol>
+<h2 id="结论分析与体会："><a href="#结论分析与体会：" class="headerlink" title="结论分析与体会："></a>结论分析与体会：</h2><p>docker是一种轻量级的虚拟机，docker是一个用于开发、交付、和运行应用程序的开放平台。</p>
+<p>在linux容器里运行的开源工具：容器引擎，让开发者可以打包大量的应用及依赖包到一个可移植的镜像中，然后发布到任何流行的linux或者window机器中</p>
+<p>进行实验的过程中需要不断的安装新的环境，要注意环境的兼容性</p>
+<p>自己镜像的创建很费时间</p>
+<p>docker引擎统一了基础设施环境–docker环境</p>
+<p>docker引擎统一了程序打包（装箱）方式，docker镜像（把引擎放在镜像中，带着经i选哪个到处跑</p>
+<p>docker引擎统一了程序部署（运行）方式–docker容器（利用引擎把这个镜像再去运行为之前的一摸一样的容器）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://jsj0513.top/2026/03/15/Docker/" data-id="cuide0VCsT3ELiePs0XlApRIv" data-title="Docker环境配置" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/" rel="tag">Docker</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-deeplearning鱼与熊掌可以兼得" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/15/deeplearning%E9%B1%BC%E4%B8%8E%E7%86%8A%E6%8E%8C%E5%8F%AF%E4%BB%A5%E5%85%BC%E5%BE%97/" class="article-date">
+  <time class="dt-published" datetime="2026-03-15T08:09:57.421Z" itemprop="datePublished">2026-03-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/15/deeplearning%E9%B1%BC%E4%B8%8E%E7%86%8A%E6%8E%8C%E5%8F%AF%E4%BB%A5%E5%85%BC%E5%BE%97/">deeplearning 鱼与熊掌可以兼得</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="鱼与熊掌兼得（deeplearning的好处）"><a href="#鱼与熊掌兼得（deeplearning的好处）" class="headerlink" title="鱼与熊掌兼得（deeplearning的好处）"></a>鱼与熊掌兼得（deeplearning的好处）</h1><h2 id="一-两难境地"><a href="#一-两难境地" class="headerlink" title="一.两难境地"></a>一.两难境地</h2><p>在deep learning过程中，对应的参数量过多，可能会造成过拟合的现象，而相反的，参数量过少有可能获得不了比较良好的效果，这让我们进入了两难的境地。</p>
+<h2 id="二-piecewise-linear-分段线性曲线回顾"><a href="#二-piecewise-linear-分段线性曲线回顾" class="headerlink" title="二.piecewise linear(分段线性曲线回顾)"></a>二.piecewise linear(分段线性曲线回顾)</h2><p>分段线性曲线可以看作常数项加上一系列的Z形函数。</p>
+<p><img src="/image-20250902092334684.png" alt="image-20250902092334684"></p>
+<p>而对应的hard sigmoid的一段函数又可以有对应的两端RELU函数进行组合表示。</p>
+<p><img src="/image-20250902092535998.png" alt="image-20250902092535998"></p>
+<h2 id="三-是否深度学习表现更加优异"><a href="#三-是否深度学习表现更加优异" class="headerlink" title="三.是否深度学习表现更加优异"></a>三.是否深度学习表现更加优异</h2><p><img src="/image-20250902092655642.png" alt="image-20250902092655642"></p>
+<p>可以看到，随着对应的深度学习的层数增加对应的语音识别的错误率也有所降低。</p>
+<p>那么瘦高的神经网络，和矮胖的神经网络哪个更好。</p>
+<p><img src="/image-20250902092819086.png" alt="image-20250902092819086"></p>
+<p>若采取同样的参数量，这里两种神经网络那个更加的优秀。</p>
+<p><img src="/image-20250902092928669.png" alt="image-20250902092928669"></p>
+<p>如图所示，采用相同的参数量，对应的更深的神经网络的表现要明显的优于矮胖的神经网络。</p>
+<p>甚至到最后矮胖的神经网络随着参数的增多，对应的实验效果变得不那么优秀，甚至出现了倒退的行为。</p>
+<h2 id="四-为什么我们需要更深的神经网络。"><a href="#四-为什么我们需要更深的神经网络。" class="headerlink" title="四.为什么我们需要更深的神经网络。"></a>四.为什么我们需要更深的神经网络。</h2><p>的确一层的神经网络可以拟合出任何的函数，但是利用深度学习网络对于效果的提升更加具有效率。例如：逻辑元器件进行组合，采用更深的 组合可以减少器件的数量。在编程的过程中比较深的递归的方法可以很大程度上的节省编程的程序篇幅，增加代码的可读性。</p>
+<p><img src="/image-20250902093439091.png" alt="image-20250902093439091"></p>
+<p>对应的剪纸的过程中，采用折叠的方式也可以类比到神经网络，剪纸的层数增加，从而使工匠对于制作的过程中更加的简洁，节省体力，增加效率。<img src="/image-20250902093612634.png" alt="image-20250902093612634"></p>
+<h2 id="五-总之：：：：："><a href="#五-总之：：：：：" class="headerlink" title="五.总之：：：：："></a>五.总之：：：：：</h2><p><img src="/image-20250902093655940.png" alt="image-20250902093655940"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://jsj0513.top/2026/03/15/deeplearning%E9%B1%BC%E4%B8%8E%E7%86%8A%E6%8E%8C%E5%8F%AF%E4%BB%A5%E5%85%BC%E5%BE%97/" data-id="cuidhXdmZGMJO2vA41MrgTSqW" data-title="deeplearning 鱼与熊掌可以兼得" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/deeplearning/" rel="tag">deeplearning</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-CNN" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/15/CNN/" class="article-date">
+  <time class="dt-published" datetime="2026-03-15T08:09:57.418Z" itemprop="datePublished">2026-03-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/15/CNN/">CNN</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><img src="/image-20250901110303393.png" alt="CNN"></p>
+<h1 id="CNN的主要流程"><a href="#CNN的主要流程" class="headerlink" title="CNN的主要流程"></a>CNN的主要流程</h1><h2 id="①规格化图片"><a href="#①规格化图片" class="headerlink" title="①规格化图片"></a>①规格化图片</h2><p>在运行训练过程之前们需要将所有的图片<strong>scale</strong>成大小一样的对应图片，最终cross entropy越小越好，对应的误差也就越小。</p>
+<p>模型的输入是对应的图片是一个三维矩阵，对应的前两位是<strong>对应的像素点的位置</strong>。而第三维是对应的<strong>rgb</strong>的一个3元数组，经过三维方向的拉直，形成一个可以用来训练的向量集合。</p>
+<p><img src="/image-20250901111401812.png" alt="image-20250901111401812"></p>
+<p><strong>对应的机器和人都是会产生差异的</strong>，人和机器都是去寻找对应的图片中生物的特征之后就将这样的特征与人们所熟知的生物特征进行比对，形成结论，但是有可能出现错误。</p>
+<p><img src="/image-20250901111606390.png" alt="image-20250901111606390"></p>
+<p>例如如上的图片，无论是人还是机器都会将其识别成一个鸟类：乌鸦，但是实际上这是一只猫，一只黑猫</p>
+<h2 id="②分区"><a href="#②分区" class="headerlink" title="②分区"></a>②分区</h2><p>观察自己的小范围去判断特征，这是每一个neuron所作的事情。</p>
+<p>将对应的小范围进行拉直，作为输入，之后利用多层的运算形成最终的判断。对应的范围的属性与分布是可以根据实际情况进行灵活调整的。多个范围之间可以进行重叠，亦可以两个神经元去守备同一块的范围，非正方形的范围也是可取的。理论上对应的范围也是可以不相连的。但是实际的图像识别中很难利用的上</p>
+<p><img src="/image-20250901112216965.png" alt="image-20250901112216965"></p>
+<h2 id="③最经典的设计"><a href="#③最经典的设计" class="headerlink" title="③最经典的设计"></a>③最经典的设计</h2><p>对应的所有的<strong>channel</strong>都参与识别但是对应的小区域的范围很小，每个区域用一个neuron去守备，移动的范围叫做<strong>stride也就是步长</strong>，对应的步长使对应的每个区域有一个维度的重叠。</p>
+<p><img src="/image-20250901112720454.png" alt="image-20250901112720454"></p>
+<p>超出对应的图的范围就用零进行补齐（其余的方式也是可取的）按照这种方式去守备整个图片。</p>
+<h2 id="④一个小问题"><a href="#④一个小问题" class="headerlink" title="④一个小问题"></a>④一个小问题</h2><p>同样的pattern可能出现在图片的不同的位置，但是扫描是无死角的，总是会被探测出来的，不一定所有的区域都要加上对应的部位的检测</p>
+<p>**解决方法：**共享参数，对应的两个神经元的权重矩阵完全相同，由于对应的部位不同，所以对应位置的识别的结果也是客观的。</p>
+<p>**注意：**不能让守备同一块区域的神经元共享参数，会造成相同的结果，没有任何意义。</p>
+<h2 id="⑤常见的共享参数的设定方法"><a href="#⑤常见的共享参数的设定方法" class="headerlink" title="⑤常见的共享参数的设定方法"></a>⑤常见的共享参数的设定方法</h2><p>不同的参数则代表守备的生物的部位是不同的，对应的参数集合叫做<strong>filter</strong>，也就是<strong>筛选器</strong></p>
+<p><img src="/image-20250901113523317.png" alt="image-20250901113523317"></p>
+<p><strong>对应的卷积神经网络的优势</strong>：</p>
+<p>对应的范围越大，对应的弹性就越大，就越容易出现overfitting，过拟合。filter可以利用矩阵相对应位置相乘再加和。</p>
+<h2 id="⑥pooling-压缩"><a href="#⑥pooling-压缩" class="headerlink" title="⑥pooling(压缩)"></a>⑥pooling(压缩)</h2><p>大的图片识别的时候可以压缩成小的图片，本身没有参数，是一个设定好的部件。</p>
+<p><strong>Max pooling</strong></p>
+<p>分组选择代表，可以选择最大的当代表，卷积神经网络需要与pooling进行交替使用</p>
+<h2 id="⑦flatten"><a href="#⑦flatten" class="headerlink" title="⑦flatten"></a>⑦flatten</h2><p>会将对应的矩阵进行拉直，判断最终的类别之前需要做这样的动作。</p>
+<h2 id="⑧总体流程"><a href="#⑧总体流程" class="headerlink" title="⑧总体流程"></a>⑧总体流程</h2><p><img src="/image-20250901114137921.png" alt="image-20250901114137921"></p>
+<p><strong>注意</strong>：对应的pooling的工作会对最终结果造成影响，但是可以减少计算量。部分的问题是不可以使用pooling的,比如对应的围棋对弈的问题。</p>
+<p><img src="/image-20250901114308100.png" alt="image-20250901114308100"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://jsj0513.top/2026/03/15/CNN/" data-id="cuidaJXJOgX7ixl6X0-_OqM8Q" data-title="CNN" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CNN%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" rel="tag">CNN卷积神经网络</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-4" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/15/4/" class="article-date">
+  <time class="dt-published" datetime="2026-03-15T08:09:57.414Z" itemprop="datePublished">2026-03-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/">云计算</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/15/4/">虚拟机网络配置和共享文件夹</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="山东大学-计算机科学与技术-学院"><a href="#山东大学-计算机科学与技术-学院" class="headerlink" title="山东大学  计算机科学与技术  学院"></a>山东大学  计算机科学与技术  学院</h1><h1 id="云计算技术-课程实验报告"><a href="#云计算技术-课程实验报告" class="headerlink" title="云计算技术  课程实验报告"></a>云计算技术  课程实验报告</h1><table>
+<thead>
+<tr>
+<th align="center">学号：202000130199</th>
+<th>姓名： 荆树吉</th>
+<th>班级： 20数据</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">实验题目：虚拟化技术练习一VMware</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">实验学时：2</td>
+<td>实验日期：</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">实验目的：在Linux环境下，熟悉VMware虚拟化环境。  具体包括：了解VMware虚拟化环境的配置和部署，并配置网络连接，使其能够与本地计算机互相通信；在虚拟机中创建一个共享文件夹，使得本地计算机能够访问该共享文件夹，撰写实验报告。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">硬件环境：   联网的计算机一台</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">软件环境：  Linux</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">实验步骤与内容：  1. 安装VWware Workstation  官方正版VMware下载（16 pro）：我用的是阿里云盘传输下载，速度较快    下载Linux系统镜像，来源同上    安装：选一下安装地址，一直下一步即可。  <img src="/clip_image002.jpg" alt="img">  新建虚拟机  现在我们就相当于买电脑，先把电脑配置整好。什么cpu啊内存条啊硬盘啊什么乱七八糟的，先不着急装系统。  Linux版本选的是GenOS7 64位。  一路默认  地址选在D盘  安装操作系统 选择镜像位置然后确认  打开虚拟机 读完秒后  选择简体中文  修改安装方式 选择GNOME桌面然后点完成  然后加一个默认的安装位置  开启网络连接  设置root密码和用户名密码  安装后重启 接受协议  安装配置进入界面  2. 并配置网络连接，使其能够与本地计算机互相通信  打开虚拟网络编辑器打开NAT模式  <img src="/clip_image004.png" alt="img">  在面板-》虚拟机-》配置（一定要选择某台虚拟机，否则设置会变为灰色）  <img src="/clip_image006.png" alt="img">  虚拟机内设置IP&#x2F;静态&#x2F;网关&#x2F;DNS  主机VMnet8的IP  <img src="/clip_image008.png" alt="img">  主机连接网络的DNS(软件网络服务)     <img src="/clip_image010.png" alt="img">  虚拟机内IP相关配置设置  vi &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens33  例如：  6.重启network服务,配置生效  双方可ping通  网络连接完成     3.设置共享文件夹  选择待处理虚拟机，右键设置  在虚拟机设置 窗口：选择 选项–》点击 共享文件夹；文件夹共享 选择总是启用     在文件夹 ：添加共享目录； 弹出窗口 点击下一步–》设置共享文件夹目录 地址、共享文件夹名称 —》启用此共享 –》完成。 虚拟机设置完成。  <img src="/clip_image012.png" alt="img">  3. 挂载  上述步骤完毕后，CentOS6会自动在&#x2F;mnt目录下挂载共享目录，但是CentOS7需要手动挂载。     1、在Centos 桌面打开终端（或者使用 XShell ：直接连接上就好)     2、查看共享目录情况  命令： vmware-hgfsclient  如果这是第一次设置共享目录， centos 7 需要创建文件夹在 &#x2F;mnt 下创建 &#x2F;hgfs  自动挂载：让虚拟机系统每次启动完成，自动挂载虚拟机已经设置的共享目录。在&#x2F;etc&#x2F;fstab文件中添加挂载目录  在打开的文件中 添加 ：  .host:&#x2F;共享文件名  &#x2F;mnt&#x2F;hgfs fuse.vmhgfs-fuse allow_other,defaults 0 0　  mount -a生效</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">结论分析与体会：  采用ubundu虚拟机会找不到对应的  网络配置的文件ens33  应该选择cento的linux系统  方可实现主机和虚拟机之间的联系</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://jsj0513.top/2026/03/15/4/" data-id="cuid7NMZhPEwIx-O_-pZopC29" data-title="虚拟机网络配置和共享文件夹" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VM/" rel="tag">VM</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/15/1/" class="article-date">
+  <time class="dt-published" datetime="2026-03-15T08:09:57.412Z" itemprop="datePublished">2026-03-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/">云计算</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/15/1/">Linux环境基本操作练习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="山东大学实验报告-1"><a href="#山东大学实验报告-1" class="headerlink" title="山东大学实验报告 1"></a>山东大学实验报告 1</h1><h2 id="山东大学-计算机科学与技术-学院"><a href="#山东大学-计算机科学与技术-学院" class="headerlink" title="山东大学  计算机科学与技术  学院"></a>山东大学  计算机科学与技术  学院</h2><h2 id="云计算技术-课程实验报告"><a href="#云计算技术-课程实验报告" class="headerlink" title="云计算技术  课程实验报告"></a>云计算技术  课程实验报告</h2><p><strong>学号：202000130199  |姓名：荆树吉 |  班级：20数据</strong></p>
+<h3 id="实验题目：Linux环境基本操作练习"><a href="#实验题目：Linux环境基本操作练习" class="headerlink" title="实验题目：Linux环境基本操作练习"></a>实验题目：Linux环境基本操作练习</h3><h3 id="实验学时：2"><a href="#实验学时：2" class="headerlink" title="实验学时：2"></a>实验学时：2</h3><h3 id="实验日期：-2023-2-25"><a href="#实验日期：-2023-2-25" class="headerlink" title="实验日期：  2023.2.25"></a>实验日期：  2023.2.25</h3><h3 id="实验目的："><a href="#实验目的：" class="headerlink" title="实验目的："></a>实验目的：</h3><p>在Linux环境下，熟悉基本的文件操作和命令</p>
+<p>具体包括：了解Linux，浏览文件、创建文件、安装一个程序、了解Python、C++等常用编程环境</p>
+<h3 id="硬件环境："><a href="#硬件环境：" class="headerlink" title="硬件环境："></a>硬件环境：</h3><p>计算机一台</p>
+<h3 id="软件环境："><a href="#软件环境：" class="headerlink" title="软件环境："></a>软件环境：</h3><p>Linux</p>
+<h3 id="实验步骤与内容："><a href="#实验步骤与内容：" class="headerlink" title="实验步骤与内容："></a>实验步骤与内容：</h3><h4 id="1-了解linux"><a href="#1-了解linux" class="headerlink" title="1.了解linux"></a>1.了解linux</h4><p>Linux，全称GNU&#x2F;Linux，是一种免费使用和自由传播的类UNIX操作系统，其内核由林纳斯·本纳第克特·托瓦兹于1991年10月5日首次发布，它主要受到Minix和Unix思想的启发，是一个基于POSIX的多用户、多任务、支持多线程和多CPU的操作系统。它能运行主要的Unix工具软件、应用程序和网络协议。它支持32位和64位硬件。Linux继承了Unix以网络为核心的设计思想，是一个性能稳定的多用户网络操作系统。Linux有上百种不同的发行版，如基于社区开发的debian、archlinux，和基于商业开发的Red Hat Enterprise Linux、SUSE、Oracle Linux等。</p>
+<h4 id="2-浏览文件和创建文件"><a href="#2-浏览文件和创建文件" class="headerlink" title="2.浏览文件和创建文件"></a>2.浏览文件和创建文件</h4><p>ls可以浏览当前文件夹的所有文件vi可以浏览文件之间的具体内容</p>
+<p><img src="/1.png" alt="1.浏览文件夹内容"></p>
+<p>vi test</p>
+<p><img src="/2.png" alt="2.浏览文件内容"></p>
+<h4 id="3-安装程序"><a href="#3-安装程序" class="headerlink" title="3.安装程序"></a>3.安装程序</h4><h5 id="一、-源码编译安装（二进制安装）"><a href="#一、-源码编译安装（二进制安装）" class="headerlink" title="一、 源码编译安装（二进制安装）"></a>一、 源码编译安装（二进制安装）</h5><p>程序：由开发人员写代码一个一个单词敲出来的</p>
+<p>源码：编写好的.c.java文件</p>
+<p>编译：将人类写的代码翻译成二进制语言</p>
+<p>安装：将二进制保存在键盘上</p>
+<p>缺点：</p>
+<p> 如果编译出了问题，你不懂源代码，无法解决</p>
+<p>安装过程复杂</p>
+<p>没有统一的管理人员</p>
+<p>优点：</p>
+<p> 契合系统，兼容性强</p>
+<p>如果你可以看懂源代码，修改新增功能</p>
+<p>比较自由</p>
+<h5 id="二、rpm安装（安装包管理工具）"><a href="#二、rpm安装（安装包管理工具）" class="headerlink" title="二、rpm安装（安装包管理工具）"></a>二、rpm安装（安装包管理工具）</h5><p>优点：</p>
+<p> 统一的安装包格式</p>
+<p>已经帮你编译完成</p>
+<p>使用简单</p>
+<p>缺点：</p>
+<p> 有依赖关系（安装 a ，就需要先安装别的）</p>
+<p>查询（对已安装程序查询）</p>
+<p>查看系统已安装的所有软件（-qa）</p>
+<h4 id="4-c-和python的利用-vscode"><a href="#4-c-和python的利用-vscode" class="headerlink" title="4 .c++,和python的利用 vscode"></a>4 .c++,和python的利用 vscode</h4><h5 id="1-c-代码"><a href="#1-c-代码" class="headerlink" title="1.c++代码"></a>1.c++代码</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> n,X,Y;</span><br><span class="line"><span class="type">int</span> x[<span class="number">202</span>],y[<span class="number">202</span>];</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">d</span>&#123;</span><br><span class="line">    <span class="type">int</span> dis;</span><br><span class="line">    <span class="type">int</span> no;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    d node[<span class="number">202</span>];</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;X&gt;&gt;Y;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin&gt;&gt;x[i]&gt;&gt;y[i];</span><br><span class="line">        node[i].dis=(x[i]-X)*(x[i]-X)+(y[i]-Y)*(y[i]-Y);</span><br><span class="line">        node[i].no=i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> t,k;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=i<span class="number">+1</span>;j&lt;n;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>((node[i].dis&gt;node[j].dis)||((node[i].dis==node[j].dis)&amp;&amp;(node[i].no&gt;node[j].no)))</span><br><span class="line">            &#123;</span><br><span class="line">               t=node[i].dis;</span><br><span class="line">               node[i].dis=node[j].dis;</span><br><span class="line">               node[j].dis=t;</span><br><span class="line">               k=node[i].no;</span><br><span class="line">               node[i].no=node[j].no;</span><br><span class="line">               node[j].no=k;</span><br><span class="line">            &#125;   </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cout&lt;&lt;node[i].dis&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;node[i].no&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;node[<span class="number">0</span>].no<span class="number">+1</span>&lt;&lt;endl&lt;&lt;node[<span class="number">1</span>].no<span class="number">+1</span>&lt;&lt;endl&lt;&lt;node[<span class="number">2</span>].no<span class="number">+1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>给出一个点的坐标和其他的点的个数</p>
+<p>再给出几个对应的点的坐标</p>
+<p>判断里这个点最近的三个点</p>
+<p>三个点的顺序由序号越小对应的距离就越近</p>
+<h5 id="2-python-代码"><a href="#2-python-代码" class="headerlink" title="2.python 代码"></a>2.python 代码</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment">#读入文件</span></span><br><span class="line">file_path = <span class="string">&quot;data.txt&quot;</span></span><br><span class="line">df = pd.read_table(file_path, header=<span class="literal">None</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#定义 x  y变量</span></span><br><span class="line">x = []</span><br><span class="line">y = []</span><br><span class="line"></span><br><span class="line"><span class="comment">#定义颜色变量</span></span><br><span class="line">color = [<span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;g&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, <span class="string">&#x27;m&#x27;</span>, <span class="string">&#x27;y&#x27;</span>, <span class="string">&#x27;k&#x27;</span>, <span class="string">&#x27;w&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">#用for循环将文件中的值赋值给x，y</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(df[<span class="number">0</span>])):</span><br><span class="line">    x.append(<span class="built_in">int</span>(df[<span class="number">0</span>][i].split(<span class="string">&#x27;,&#x27;</span>)[<span class="number">0</span>]))</span><br><span class="line">    y.append(<span class="built_in">int</span>(df[<span class="number">0</span>][i].split(<span class="string">&#x27;,&#x27;</span>)[<span class="number">1</span>]))</span><br><span class="line"></span><br><span class="line"><span class="comment">#画图</span></span><br><span class="line">plt.scatter(x, y, c=color[<span class="number">2</span>], edgecolors=<span class="string">&#x27;g&#x27;</span>)</span><br><span class="line">plt.show()</span><br><span class="line">画一个散点图</span><br><span class="line">数据如下</span><br><span class="line"><span class="number">151</span>,<span class="number">54</span></span><br><span class="line"><span class="number">137</span>,<span class="number">55</span></span><br><span class="line"><span class="number">95</span>,<span class="number">66</span></span><br><span class="line"><span class="number">156</span>,<span class="number">91</span></span><br><span class="line"><span class="number">193</span>,<span class="number">101</span></span><br><span class="line"><span class="number">58</span>,<span class="number">104</span></span><br><span class="line"><span class="number">133</span>,<span class="number">105</span></span><br><span class="line"><span class="number">120</span>,<span class="number">118</span></span><br><span class="line"><span class="number">167</span>,<span class="number">136</span></span><br><span class="line"><span class="number">110</span>,<span class="number">149</span></span><br><span class="line"><span class="number">96</span>,<span class="number">174</span></span><br><span class="line"><span class="number">22</span>,<span class="number">184</span></span><br><span class="line"><span class="number">60</span>,<span class="number">193</span></span><br><span class="line"><span class="number">88</span>,<span class="number">198</span></span><br><span class="line"><span class="number">177</span>,<span class="number">202</span></span><br><span class="line"><span class="number">213</span>,<span class="number">235</span></span><br><span class="line"><span class="number">133</span>,<span class="number">249</span></span><br><span class="line"><span class="number">127</span>,<span class="number">255</span></span><br><span class="line"><span class="number">70</span>,<span class="number">257</span></span><br><span class="line"><span class="number">40</span>,<span class="number">273</span></span><br><span class="line"><span class="number">64</span>,<span class="number">271</span></span><br><span class="line"><span class="number">168</span>,<span class="number">286</span></span><br><span class="line"><span class="number">126</span>,<span class="number">325</span></span><br><span class="line"><span class="number">132</span>,<span class="number">335</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="结论分析与体会"><a href="#结论分析与体会" class="headerlink" title="结论分析与体会"></a>结论分析与体会</h3><p>Linux不仅系统性能稳定，而且是开源软件。其核心防火墙组件性能高效、配置简单，保证了系统的安全。在很多企业网络中，为了追求速度和安全，Linux不仅仅是被网络运维人员当作服务器使用，甚至当作网络防火墙，这是Linux的一大亮点。</p>
+<p>Linux具有开放源码、没有版权、技术社区用户多等特点，开放源码使得用户可以自由裁剪，灵活性高，功能强大，成本低。尤其系统中内嵌网络协议栈，经过适当的配置就可实现路由器的功能。这些特点使得Linux成为开发路由交换设备的理想开发平台。</p>
+<p>Linux的基本思想有两点：第一，一切都是文件；第二，每个文件都有确定的用途。其中第一条详细来讲就是系统中的所有都归结为一个文件，包括命令、硬件和软件设备、操作系统、进程等等对于操作系统内核而言，都被视为拥有各自特性或类型的文件。至于说Linux是基于Unix的，很大程度上也是因为这两者的基本思想十分相近。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://jsj0513.top/2026/03/15/1/" data-id="cuidrdrKMREnfJ5dBW2pQr2lK" data-title="Linux环境基本操作练习" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-%E6%93%8D%E4%BD%9C/" rel="tag">linux 操作</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/14/hello-world/" class="article-date">
+  <time class="dt-published" datetime="2026-03-14T15:46:46.959Z" itemprop="datePublished">2026-03-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/14/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://jsj0513.top/2026/03/14/hello-world/" data-id="cuid_0-fIlh4gDsUV3LEk7cBY" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-自注意力机制" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/10/24/%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/" class="article-date">
+  <time class="dt-published" datetime="2025-10-24T12:07:00.000Z" itemprop="datePublished">2025-10-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/10/24/%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/">自注意力机制</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="自注意力机制"><a href="#自注意力机制" class="headerlink" title="自注意力机制"></a>自注意力机制</h1><p><strong>自注意力（Self-Attention）机制</strong>是一种特殊的注意力机制，它允许模型在处理一个序列时，考虑到序列中<strong>每个元素</strong>与<strong>其他所有元素</strong>的关系。这种机制可以帮助模型更好地理解序列中的上下文信息，从而更准确地处理序列数据。 (序列数据是一种数据类型，其中的元素存在特定的顺序。每个元素都有特定的位置，且位置之间的顺序关系对于数据的含义和处理方式有重要影响）</p>
+<p>在自注意力机制中，模型会<strong>计算序列中每个元素与其他所有元素的关联度（或称为权重）</strong>。这些权重反映了元素之间的相互关系，比如在语言模型中，它们可以反映词与词之间的语义关联度。（比如机器翻译）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">举例：以&quot;the 2022 Beijing Winter Games&quot;为例，当模型处理&quot;Games&quot;这个词时，通过自注意力机制，它可以考虑到&quot;2022&quot;、&quot;Beijing&quot;和&quot;Winter&quot;这些词的信息。这样，模型就能理解到&quot;Games&quot;在这里并不是指一般的&quot;游戏&quot;，而是指特定的&quot;比赛&quot;，并且这个&quot;比赛&quot;是在&quot;2022年&quot;、在&quot;北京&quot;举行的那就很好的理解为是&quot;冬季奥运会&quot;。</span><br></pre></td></tr></table></figure>
+
+<h3 id="如何计算权重"><a href="#如何计算权重" class="headerlink" title="如何计算权重"></a>如何计算权重</h3><h3 id="理解查询（Query）键（Key）和值（Value）"><a href="#理解查询（Query）键（Key）和值（Value）" class="headerlink" title="理解查询（Query）键（Key）和值（Value）"></a>理解查询（Query）键（Key）和值（Value）</h3><p>对于输入序列中的每个元素，我们都会计算一个查询向量、一个键向量和一个值向量。（每一个元素都有QKV三个对应的矩阵）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">举例说明：假设你在图书馆里，你想找一本关于&quot;如何暴富&quot;的书。你的查询（Query）就是&quot;如何暴富&quot;。 图书馆的图书管理员就像是自注意力机制，他们需要根据你的查询（Query）在图书馆的大量书籍中找到相关的书。每一本书都有一个书名，这就是键（Key）。图书管理员会比较你的查询（Query）和每一本书的键（Key），也就是查询内容“如何暴富”和每一本书名进行比较，以确定哪些书与你的查询相关。 每一本书都有一些具体的信息，比如书的内容、作者等，这就是值（Value）。一旦图书管理员找到了与你的查询（Query）匹配的键（Key），他们就会给你那本书的值（Value），也就是你想要的书。</span><br></pre></td></tr></table></figure>
+
+<p>当模型处理一个词（比如“games”）时，他会生成一个查询（QUERY).然后，模型会比较这个查询和其他所有词的键，以确定那些词与当前处理的词相关。最后，模型会根据这些相关词的值来更新当前处理的词的表示。所以，当模型处理”Games”这个词时，它可能会发现”2022”、”Beijing”和”Winter”这些词的键（Key）与”Games”的查询（Query）匹配，然后，模型就会考虑这些词的值，从而理解到“Game”这里并不是指一般的”游戏“,而是指特定的比赛，并且这个比赛是在”2022年”、在”北京”举行的”冬季奥运会”。</p>
+<h4 id="过程说明："><a href="#过程说明：" class="headerlink" title="过程说明："></a><strong>过程说明：</strong></h4><p><img src="/v2-403853c29f71b668bd1856b08e1cc3b4_1440w.jpg" alt="img"></p>
+<p>注意力权重就是值向量</p>
+<ol>
+<li><p>**计算查询、键、值：**对于输入序列中的每个元素，我们都会计算一个查询向量、一个键向量和一个值向量。<strong>这些向量是通过学习得到的权重矩阵</strong>与输入元素的线性变换得到的。 假设我们的输入序列为权重矩阵为</p>
+<img src="/image-20251024193430127.png" alt="image-20251024193430127" style="zoom: 67%;" />
+
+<p>那么对于每个元素我们有，<img src="/image-20251024193506001.png" alt="image-20251024193506001"> 其中<img src="/image-20251024193527578.png" alt="image-20251024193527578">分别表示第个元素的查询、键和值向量。（从矩阵中进行线性组合（一个元素有一个向量)这个向量与矩阵相乘会获得每个矩阵的查询向量。</p>
+</li>
+<li><p>计算注意力分数: 对于每一对元素<img src="/image-20251024193736926.png" alt="image-20251024193736926">, 我们计算一个注意力 分数, 表示 对 的注意力程度。</p>
+</li>
+<li><p>注意力分数是通过查询向量 和键向量的点积, 然后再除以一个缩放因子（通常是键向量维度的平方根) 得到的: <img src="/image-20251024193942105.png" alt="image-20251024193942105" style="zoom: 50%;" />其中 <img src="/image-20251024194025621.png" alt="image-20251024194025621">是键向量的维度。</p>
+</li>
+<li><p>计算注意力权重: 然后, 我们通过 softmax 函数使得注意力分数转为化0和1之前的数值且和为1，进而得出注意力权重, : <img src="/image-20251024194100666.png" alt="image-20251024194100666" style="zoom:50%;" />用自然对数</p>
+</li>
+<li><p>计算输出: 最后, 我们将每个元素的值向量与其对应的注意力权 重相乘, 然后求和, 得到最终的输出: <img src="/image-20251024194222275.png" alt="image-20251024194222275">这些权重会被用来组合输入的词向量，生成一个新的上下文相关的词向量。这个词向量不仅包含了当前词的信息，还包含了其上下文的信息。这样，模型就能更好地理解每个词在具体上下文中的含义。</p>
+</li>
+</ol>
+<h4 id="多头注意力机制"><a href="#多头注意力机制" class="headerlink" title="多头注意力机制"></a>多头注意力机制</h4><p><img src="/v2-9e1eb58a851d1b6418e3fa3a8a30f18f_1440w.jpg" alt="img"></p>
+<p>在多头注意力机制中，输入数据首先会被分成多个“头”（每个头包含若干个单词，以机器翻译为主），每个“头”都有自己的查询（Query）、键（Key）和值（Value）向量。每个头都会独立地进行自注意力计算，得到自己的注意力输出，计算过程与上面描述一致，最后将这些输出$z_i$拼接在一起，形成最终的输出。</p>
+<p><img src="/image-20251024194535797.png" alt="image-20251024194535797"></p>
+<p>其中，<img src="/image-20251024194640002.png" alt="image-20251024194640002">是输出权重矩阵，<img src="/image-20251024194655618.png" alt="image-20251024194655618">是拼接操作。</p>
+<p><img src="/image-20251024194818057.png" alt="image-20251024194818057">函数的作用是将多个向量或矩阵在某一维度上进行拼接。在多头注意力机制中，<img src="/image-20251024194823304.png" alt="image-20251024194823304"> 函数用于将每个头的注意力输出向量拼接成一个大的向量。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">具体来说，假设我们有h个头，每个头的注意力输出是一个d维的向量，那么通过 </span><br><span class="line"> textConcat函数拼接后，我们会得到一个 h*d 维的向量。这个大的向量包含了所有头的注意力输出信息。 可以让模型同时考虑到所有头的信息。因为每个头可能关注输入序列的不同部分，所以通过拼接，我们可以将这些不同的信息整合在一起，从而得到一个更全面的表示。</span><br></pre></td></tr></table></figure>
+
+<p>多头注意力机制的优点是可以让模型同时关注输入序列的不同位置，从而捕捉更丰富的信息。例如，在处理自然语言时，模型可能需要同时关注一个句子中的主语和宾语，以理解句子的含义。通过多头注意力机制，模型可以在每个头中关注句子的不同部分，从而更好地理解句子的含义。</p>
+<h4 id="其他说明"><a href="#其他说明" class="headerlink" title="其他说明"></a>其他说明</h4><p><strong>上下文注意力机制</strong>（<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=230686312&content_type=Article&match_order=1&q=Contextual++Attention&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3NjE0Nzc2MzEsInEiOiJDb250ZXh0dWFsICBBdHRlbnRpb24iLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMzA2ODYzMTIsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.0UgGv9MEJQrvtvS5GnQh3zJYQKWBWUnWbkfSlhp3b2I&zhida_source=entity">Contextual Attention</a>）：这种注意力机制主要是在处理自然语言处理任务时使用的，它的主要目标是根据上下文信息来理解和生成语言。在这种机制中，模型会考虑到一个词的上下文信息（即它周围的词），并根据这些信息来确定它的含义。这种机制通常在词嵌入模型（如Word2Vec或GloVe）或者是语言模型（如BERT或GPT）中使用。</p>
+<p><strong>编码器-解码器注意力机制</strong>（Encoder-Decoder Attention）：这种注意力机制主要是在处理序列到序列（Seq2Seq）任务时使用的，如机器翻译或者是文本摘要。在这种机制中，模型会在编码阶段将输入序列编码为一个固定长度的向量，然后在解码阶段根据这个向量来生成输出序列。在生成每一个输出元素时，模型会考虑到输入序列中的所有元素，并根据它们的重要性赋予不同的权重。这种权重通常是通过计算输入和输出元素之间的相似度得到的。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://jsj0513.top/2025/10/24/%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/" data-id="cuidZ5bMOxTCr3hM7kh_haac7" data-title="自注意力机制" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/" rel="tag">自注意力机制</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/nlp/">nlp</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/">云计算</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/">数学基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%88%86%E6%9E%90/">生物信息分析</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%8B%B1%E8%AF%AD/">英语</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/">计算机组成</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE/">项目</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CNN%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" rel="tag">CNN卷积神经网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/" rel="tag">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GWAS/" rel="tag">GWAS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KVM/" rel="tag">KVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-learning/" rel="tag">Machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PheWAS/" rel="tag">PheWAS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VM/" rel="tag">VM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deeplearning/" rel="tag">deeplearning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-%E6%93%8D%E4%BD%9C/" rel="tag">linux 操作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openVZ/" rel="tag">openVZ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%91%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA/" rel="tag">云平台搭建</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AD%E7%BA%A7/" rel="tag">六级</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%98%E5%BD%A2%E9%87%91%E5%88%9A/" rel="tag">变形金刚</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%88%90%E5%BC%8F%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C/" rel="tag">生成式对抗网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9F%A9%E9%98%B5/" rel="tag">矩阵</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/" rel="tag">自注意力机制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/" rel="tag">计算机组成</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%8D%E5%90%91%E9%87%8F/" rel="tag">词向量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE/" rel="tag">项目</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CNN%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" style="font-size: 10px;">CNN卷积神经网络</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/GWAS/" style="font-size: 20px;">GWAS</a> <a href="/tags/KVM/" style="font-size: 10px;">KVM</a> <a href="/tags/Machine-learning/" style="font-size: 10px;">Machine learning</a> <a href="/tags/PheWAS/" style="font-size: 15px;">PheWAS</a> <a href="/tags/VM/" style="font-size: 10px;">VM</a> <a href="/tags/deeplearning/" style="font-size: 10px;">deeplearning</a> <a href="/tags/linux-%E6%93%8D%E4%BD%9C/" style="font-size: 10px;">linux 操作</a> <a href="/tags/openVZ/" style="font-size: 15px;">openVZ</a> <a href="/tags/%E4%BA%91%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA/" style="font-size: 10px;">云平台搭建</a> <a href="/tags/%E5%85%AD%E7%BA%A7/" style="font-size: 10px;">六级</a> <a href="/tags/%E5%8F%98%E5%BD%A2%E9%87%91%E5%88%9A/" style="font-size: 10px;">变形金刚</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E7%94%9F%E6%88%90%E5%BC%8F%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C/" style="font-size: 10px;">生成式对抗网络</a> <a href="/tags/%E7%9F%A9%E9%98%B5/" style="font-size: 10px;">矩阵</a> <a href="/tags/%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/" style="font-size: 10px;">自注意力机制</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/" style="font-size: 10px;">计算机组成</a> <a href="/tags/%E8%AF%8D%E5%90%91%E9%87%8F/" style="font-size: 10px;">词向量</a> <a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 10px;">项目</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/10/">October 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/03/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/15/%E7%94%9F%E6%88%90%E5%BC%8F%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C/">生成式对抗网络</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/15/%E5%85%AD%E7%BA%A7/">六级</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/15/%E7%9F%A9%E9%98%B5%E5%88%86%E6%9E%90%E6%89%8B%E5%86%99%E7%AC%94%E8%AE%B0/">矩阵分析关键手写笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/15/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/">计算机组成</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
