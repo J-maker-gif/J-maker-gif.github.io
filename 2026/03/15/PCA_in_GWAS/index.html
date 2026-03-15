@@ -13,19 +13,19 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="有关PLINK——QC">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://jsj0513.top/v2-ad3a4e7a38c348943eab233a60b37c7c_1440w.jpg">
+<meta property="og:image" content="http://jsj0513.top/2026/03/15/PCA_in_GWAS/03/15/PCA_in_GWAS/v2-ad3a4e7a38c348943eab233a60b37c7c_1440w.jpg">
 <meta property="og:image" content="https://github.com/Cloufield/GWASTutorial/assets/40289485/ee6bccfd-cf65-4126-88b1-047fc835b69b">
-<meta property="og:image" content="http://jsj0513.top/image-20251206220939344.png">
+<meta property="og:image" content="http://jsj0513.top/2026/03/15/PCA_in_GWAS/image-20251206220939344.png">
 <meta property="og:image" content="https://github.com/Cloufield/GWASTutorial/assets/40289485/767d940c-0ade-47b9-b53e-8e55cc3e0591">
 <meta property="og:image" content="https://github.com/Cloufield/GWASTutorial/assets/40289485/6a5880c7-10bd-4fac-a364-12ab14171f72">
 <meta property="og:image" content="https://github.com/Cloufield/GWASTutorial/assets/40289485/f4cfc158-9db7-4b87-af13-041a954fc1fa">
-<meta property="og:image" content="http://jsj0513.top/image-20251211200134580.png">
+<meta property="og:image" content="http://jsj0513.top/2026/03/15/PCA_in_GWAS/image-20251211200134580.png">
 <meta property="article:published_time" content="2026-03-15T08:09:57.445Z">
 <meta property="article:modified_time" content="2025-12-11T13:17:14.027Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="GWAS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://jsj0513.top/v2-ad3a4e7a38c348943eab233a60b37c7c_1440w.jpg">
+<meta name="twitter:image" content="http://jsj0513.top/2026/03/15/PCA_in_GWAS/03/15/PCA_in_GWAS/v2-ad3a4e7a38c348943eab233a60b37c7c_1440w.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -108,11 +108,11 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p><img src="/v2-ad3a4e7a38c348943eab233a60b37c7c_1440w.jpg" alt="PCA（主成分分析）的理解与应用 - 知乎"></p>
+        <p><img src="/2026/03/15/PCA_in_GWAS/03/15/PCA_in_GWAS/v2-ad3a4e7a38c348943eab233a60b37c7c_1440w.jpg" alt="PCA（主成分分析）的理解与应用 - 知乎"></p>
 <h1 id="Principle-component-analysis-PCA"><a href="#Principle-component-analysis-PCA" class="headerlink" title="Principle component analysis (PCA)"></a>Principle component analysis (PCA)</h1><p>PCA aims to find the <strong>orthogonal directions of maximum variance</strong> and project the data onto a new subspace with equal or fewer dimensions than the original one. </p>
 <p>PCA旨在找到最大方差的<strong>正交方向</strong>，并将数据投影到一个维度等于或小于原始维度的新子空间上。</p>
 <p>info “Steps of PCA”<br>    <img width="600" alt="image" src="https://github.com/Cloufield/GWASTutorial/assets/40289485/ee6bccfd-cf65-4126-88b1-047fc835b69b"></p>
-<p> example “A simple illustration of PCA”<br>    <img src="/image-20251206220939344.png" alt="PCA_eg"></p>
+<p> example “A simple illustration of PCA”<br>    <img src="/2026/03/15/PCA_in_GWAS/image-20251206220939344.png" alt="PCA_eg"></p>
 <pre><code>Source data:
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cov = np.array([[6, -3], [-3, 3.5]])</span><br><span class="line">pts = np.random.multivariate_normal([0, 0], cov, size=800)</span><br></pre></td></tr></table></figure>
 
@@ -845,7 +845,7 @@ plink2 \
 
 <h3 id="Plotting"><a href="#Plotting" class="headerlink" title="Plotting"></a>Plotting</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plt.figure(figsize=(<span class="number">10</span>,<span class="number">10</span>))</span><br><span class="line">sns.scatterplot(data=pcaped,x=<span class="string">&quot;PC1_AVG&quot;</span>,y=<span class="string">&quot;PC2_AVG&quot;</span>,hue=<span class="string">&quot;pop&quot;</span>,s=<span class="number">50</span>)</span><br></pre></td></tr></table></figure>
 
-<p><img src="/image-20251211200134580.png" alt="pca—in—aisan—distribution"></p>
+<p><img src="/2026/03/15/PCA_in_GWAS/image-20251211200134580.png" alt="pca—in—aisan—distribution"></p>
 <p><strong>日本东京群体(Japanese in Tokyo, JPT)、北京汉族(Han Chinese in Beijing, CHB)、南方汉族(Southern Han Chinese, CHS)、西双版纳傣族(Chinese Dai in Xishuangbanna, CDX)、越南京族(Kinh in Ho Chi Minh City, KHV)</strong></p>
 <p>这样的分布图是可以画出很多张的，实际上都是东亚部分</p>
 <h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><ul>
@@ -859,7 +859,7 @@ plink2 \
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jsj0513.top/2026/03/15/PCA_in_GWAS/" data-id="cuid7gTpQtKLhTrlvSvEEVh8Z" data-title="PCA在GWAS中的应用" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://jsj0513.top/2026/03/15/PCA_in_GWAS/" data-id="cuidSakVUer2h_SSOfxDeb4sT" data-title="PCA在GWAS中的应用" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       

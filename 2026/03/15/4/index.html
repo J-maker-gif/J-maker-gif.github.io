@@ -11,18 +11,18 @@
 <meta property="og:url" content="http://jsj0513.top/2026/03/15/4/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://jsj0513.top/clip_image002.jpg">
-<meta property="og:image" content="http://jsj0513.top/clip_image004.png">
-<meta property="og:image" content="http://jsj0513.top/clip_image006.png">
-<meta property="og:image" content="http://jsj0513.top/clip_image008.png">
-<meta property="og:image" content="http://jsj0513.top/clip_image010.png">
-<meta property="og:image" content="http://jsj0513.top/clip_image012.png">
+<meta property="og:image" content="http://jsj0513.top/2026/03/15/4/clip_image002.jpg">
+<meta property="og:image" content="http://jsj0513.top/2026/03/15/4/clip_image004.png">
+<meta property="og:image" content="http://jsj0513.top/2026/03/15/4/clip_image006.png">
+<meta property="og:image" content="http://jsj0513.top/2026/03/15/4/clip_image008.png">
+<meta property="og:image" content="http://jsj0513.top/2026/03/15/4/clip_image010.png">
+<meta property="og:image" content="http://jsj0513.top/2026/03/15/4/clip_image012.png">
 <meta property="article:published_time" content="2026-03-15T08:09:57.414Z">
-<meta property="article:modified_time" content="2025-03-19T12:32:54.518Z">
+<meta property="article:modified_time" content="2026-03-15T09:16:28.851Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="VM">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://jsj0513.top/clip_image002.jpg">
+<meta name="twitter:image" content="http://jsj0513.top/2026/03/15/4/clip_image002.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -145,7 +145,7 @@
 <td></td>
 </tr>
 <tr>
-<td align="center">实验步骤与内容：  1. 安装VWware Workstation  官方正版VMware下载（16 pro）：我用的是阿里云盘传输下载，速度较快    下载Linux系统镜像，来源同上    安装：选一下安装地址，一直下一步即可。  <img src="/clip_image002.jpg" alt="img">  新建虚拟机  现在我们就相当于买电脑，先把电脑配置整好。什么cpu啊内存条啊硬盘啊什么乱七八糟的，先不着急装系统。  Linux版本选的是GenOS7 64位。  一路默认  地址选在D盘  安装操作系统 选择镜像位置然后确认  打开虚拟机 读完秒后  选择简体中文  修改安装方式 选择GNOME桌面然后点完成  然后加一个默认的安装位置  开启网络连接  设置root密码和用户名密码  安装后重启 接受协议  安装配置进入界面  2. 并配置网络连接，使其能够与本地计算机互相通信  打开虚拟网络编辑器打开NAT模式  <img src="/clip_image004.png" alt="img">  在面板-》虚拟机-》配置（一定要选择某台虚拟机，否则设置会变为灰色）  <img src="/clip_image006.png" alt="img">  虚拟机内设置IP&#x2F;静态&#x2F;网关&#x2F;DNS  主机VMnet8的IP  <img src="/clip_image008.png" alt="img">  主机连接网络的DNS(软件网络服务)     <img src="/clip_image010.png" alt="img">  虚拟机内IP相关配置设置  vi &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens33  例如：  6.重启network服务,配置生效  双方可ping通  网络连接完成     3.设置共享文件夹  选择待处理虚拟机，右键设置  在虚拟机设置 窗口：选择 选项–》点击 共享文件夹；文件夹共享 选择总是启用     在文件夹 ：添加共享目录； 弹出窗口 点击下一步–》设置共享文件夹目录 地址、共享文件夹名称 —》启用此共享 –》完成。 虚拟机设置完成。  <img src="/clip_image012.png" alt="img">  3. 挂载  上述步骤完毕后，CentOS6会自动在&#x2F;mnt目录下挂载共享目录，但是CentOS7需要手动挂载。     1、在Centos 桌面打开终端（或者使用 XShell ：直接连接上就好)     2、查看共享目录情况  命令： vmware-hgfsclient  如果这是第一次设置共享目录， centos 7 需要创建文件夹在 &#x2F;mnt 下创建 &#x2F;hgfs  自动挂载：让虚拟机系统每次启动完成，自动挂载虚拟机已经设置的共享目录。在&#x2F;etc&#x2F;fstab文件中添加挂载目录  在打开的文件中 添加 ：  .host:&#x2F;共享文件名  &#x2F;mnt&#x2F;hgfs fuse.vmhgfs-fuse allow_other,defaults 0 0　  mount -a生效</td>
+<td align="center">实验步骤与内容：  1. 安装VWware Workstation  官方正版VMware下载（16 pro）：我用的是阿里云盘传输下载，速度较快    下载Linux系统镜像，来源同上    安装：选一下安装地址，一直下一步即可。  <img src="/2026/03/15/4/clip_image002.jpg" alt="img">  新建虚拟机  现在我们就相当于买电脑，先把电脑配置整好。什么cpu啊内存条啊硬盘啊什么乱七八糟的，先不着急装系统。  Linux版本选的是GenOS7 64位。  一路默认  地址选在D盘  安装操作系统 选择镜像位置然后确认  打开虚拟机 读完秒后  选择简体中文  修改安装方式 选择GNOME桌面然后点完成  然后加一个默认的安装位置  开启网络连接  设置root密码和用户名密码  安装后重启 接受协议  安装配置进入界面  2. 并配置网络连接，使其能够与本地计算机互相通信  打开虚拟网络编辑器打开NAT模式  <img src="/2026/03/15/4/clip_image004.png" alt="img">  在面板-》虚拟机-》配置（一定要选择某台虚拟机，否则设置会变为灰色）  <img src="/2026/03/15/4/clip_image006.png" alt="img">  虚拟机内设置IP&#x2F;静态&#x2F;网关&#x2F;DNS  主机VMnet8的IP  <img src="/2026/03/15/4/clip_image008.png" alt="img">  主机连接网络的DNS(软件网络服务)     <img src="/2026/03/15/4/clip_image010.png" alt="img">  虚拟机内IP相关配置设置  vi &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens33  例如：  6.重启network服务,配置生效  双方可ping通  网络连接完成     3.设置共享文件夹  选择待处理虚拟机，右键设置  在虚拟机设置 窗口：选择 选项–》点击 共享文件夹；文件夹共享 选择总是启用     在文件夹 ：添加共享目录； 弹出窗口 点击下一步–》设置共享文件夹目录 地址、共享文件夹名称 —》启用此共享 –》完成。 虚拟机设置完成。  <img src="/2026/03/15/4/clip_image012.png" alt="img">  3. 挂载  上述步骤完毕后，CentOS6会自动在&#x2F;mnt目录下挂载共享目录，但是CentOS7需要手动挂载。     1、在Centos 桌面打开终端（或者使用 XShell ：直接连接上就好)     2、查看共享目录情况  命令： vmware-hgfsclient  如果这是第一次设置共享目录， centos 7 需要创建文件夹在 &#x2F;mnt 下创建 &#x2F;hgfs  自动挂载：让虚拟机系统每次启动完成，自动挂载虚拟机已经设置的共享目录。在&#x2F;etc&#x2F;fstab文件中添加挂载目录  在打开的文件中 添加 ：  .host:&#x2F;共享文件名  &#x2F;mnt&#x2F;hgfs fuse.vmhgfs-fuse allow_other,defaults 0 0　  mount -a生效</td>
 <td></td>
 <td></td>
 <td></td>
@@ -167,7 +167,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jsj0513.top/2026/03/15/4/" data-id="cuidMDmXBOAmNR3fbrMhyzQLi" data-title="虚拟机网络配置和共享文件夹" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://jsj0513.top/2026/03/15/4/" data-id="cuid46ESJrxpA0OUkzVPvCXZI" data-title="虚拟机网络配置和共享文件夹" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       

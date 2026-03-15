@@ -136,7 +136,7 @@
 <p>此模拟仅用于显示分析管道和数据格式。该特征是在不真实的条件下模拟的（效果大小非常大），因此结果本身毫无意义。</p>
 <p>​    Allele frequency and Effect size</p>
 <p>等位基因频率和效应大小</p>
-<p>​    <img src="/d5133405-290c-4436-b61e-60f8a750f194.png"></p>
+<p>​    <img src="/2026/03/15/GWAS_introduceofDATA/d5133405-290c-4436-b61e-60f8a750f194.png"></p>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
 <li>1000 Genomes Project Consortium. (2015). A global reference for human genetic variation. Nature, 526(7571), 68.</li>
 <li>Yang, J., Lee, S. H., Goddard, M. E., &amp; Visscher, P. M. (2011). GCTA: a tool for genome-wide complex trait analysis. The American Journal of Human Genetics, 88(1), 76-82.</li>
@@ -181,7 +181,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jsj0513.top/2026/03/15/GWAS_introduceofDATA/" data-id="cuidkKyGN7u1m6Q1u9G8BBW7k" data-title="GWAS数据的介绍" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://jsj0513.top/2026/03/15/GWAS_introduceofDATA/" data-id="cuidXVP0TKy04ew3ZSOMXWcac" data-title="GWAS数据的介绍" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -221,9 +221,9 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p><img src="/image-20260106212102225.png" alt="image-20260106212102225"></p>
+        <p><img src="/2026/03/15/end_to_end_chr19/image-20260106212102225.png" alt="image-20260106212102225"></p>
 <h1 id="End-to-end-target-discovery-with-GWAS-and-PheWAS-19号染色体微缩版"><a href="#End-to-end-target-discovery-with-GWAS-and-PheWAS-19号染色体微缩版" class="headerlink" title="End-to-end target discovery with GWAS and PheWAS(19号染色体微缩版)"></a>End-to-end target discovery with GWAS and PheWAS(19号染色体微缩版)</h1><h1 id="1-实验介绍"><a href="#1-实验介绍" class="headerlink" title="1.实验介绍"></a>1.实验介绍</h1><p>本实验源于<a target="_blank" rel="noopener" href="https://dnanexus.gitbook.io/uk-biobank-rap/science-corner/end-to-end-target-discovery-with-gwas-and-phewas#genome-data">End-to-end target discovery with GWAS and PheWAS | Research Analysis Platform</a>的端对端的基因组靶点发现，以缺血性心脏病作为表型示例。分析的第一步时建立病例组和对照组。之后对于队列的样本数据进行筛选。之后对于基因组数据，芯片数据和插补数据及逆行清洗处理。接着展开局部部分的GWAS分析，并采用连锁不平衡聚类方法整合出显著的关联变异位点。最后针对每个变异位点进行表型关联分析（PheWAS）</p>
-<p><img src="/image-20260106222407942.png" alt="image-20260106222407942"></p>
+<p><img src="/2026/03/15/end_to_end_chr19/image-20260106222407942.png" alt="image-20260106222407942"></p>
 <h2 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h2><h3 id="基因组数据"><a href="#基因组数据" class="headerlink" title="基因组数据"></a>基因组数据</h3><p>采用了两种基因组数据：芯片数据（array data）和插补数据（imputed data）。在处理连锁不平衡现象时仅用了插补数据.</p>
 <h3 id="表型数据"><a href="#表型数据" class="headerlink" title="表型数据"></a>表型数据</h3><p>首先选择缺血性心脏病作为目标表型（ICD-10编码I20-I25），同时为样本质量控制检索了以下字段：</p>
 <ul>
@@ -247,15 +247,15 @@
 <h2 id="2-创建队列"><a href="#2-创建队列" class="headerlink" title="2.创建队列"></a>2.创建队列</h2><p>创建好队列，就可以用于后续分析(GWAS),本分析所采用的表型比较简单，但实际上可能包含多个字段。</p>
 <p>首先，使用队列浏览器创建选定的队列。通过在字段41270中选择具有I20-I25缺血性心脏病的参与者，创建了”ischemic_cases”队列。 “ischemic_controls”队列通过在”ischemic_cases”中使用”队列比较：非”选项创建。最终形成包含57,383例”ischemic_cases”和445,027例”ischemic_controls”的样本。</p>
 <h3 id="UI界面"><a href="#UI界面" class="headerlink" title="UI界面"></a>UI界面</h3><p>1.在RAP中，请点击”管理”选项卡下的目标数据集。如下方图片所示，点击数据集名称即可进入队列浏览器页面。</p>
-<p><img src="/image-20260106224123340.png" alt="image-20260106224123340"></p>
+<p><img src="/2026/03/15/end_to_end_chr19/image-20260106224123340.png" alt="image-20260106224123340"></p>
 <p>2.然后，点击“添加筛选器”按钮。在搜索栏中输入“缺血性心脏病”（ischaemic heart disease），并选择“诊断 - ICD10”（数据字段为41270）。点击“添加队列筛选器”确认选择。</p>
-<p><img src="/image-20260106224246636.png" alt="image-20260106224246636"></p>
+<p><img src="/2026/03/15/end_to_end_chr19/image-20260106224246636.png" alt="image-20260106224246636"></p>
 <p>3.在“包含以下任何一项”Includes any of的模态提示框中，输入“I20-I25 缺血性心脏病”(I20-I25 Ischaemic heart disease)并选择该选项。然后点击“应用筛选器”(<strong>Apply Filter</strong> )按钮</p>
 <p>4.命名队列。在此示例中，队列名为“ischemic_cases”（注：示例队列名称采用美式拼写，但提及特定UKB数据字段时将使用英式拼写）</p>
 <h3 id="创建对照组"><a href="#创建对照组" class="headerlink" title="创建对照组"></a>创建对照组</h3><p>1.要创建对照组，请点击“+”按钮（鼠标悬停提示：“比较&#x2F;合并队列”（Compare&#x2F;combine cohort））。</p>
-<p><img src="/image-20260106224553113.png" alt="image-20260106224553113"></p>
+<p><img src="/2026/03/15/end_to_end_chr19/image-20260106224553113.png" alt="image-20260106224553113"></p>
 <p>2.从下拉菜单中选择“不在缺血病例中”选项，并应用此筛选条件。</p>
-<p><img src="/image-20260106224925531.png" alt="image-20260106224925531"></p>
+<p><img src="/2026/03/15/end_to_end_chr19/image-20260106224925531.png" alt="image-20260106224925531"></p>
 <p>3.命名并保存该队列。在此示例中，”ischemic_cases”队列包含57,383个样本，而”ischemic_controls”队列包含445,027个样本。（病例组和对照组都需要进行保存，以便在对应的个体质量控制进行）</p>
 <h2 id="样本质量控制"><a href="#样本质量控制" class="headerlink" title="样本质量控制"></a>样本质量控制</h2><p>样本清理可降低数据噪声，提高全基因组关联分析结果的准确性。例如，通过检查性别不一致和性染色体非整倍体，可排除可能的样本混淆和基因分型错误。通过仅选择单一人群（白人英国人），最大限度地减少了群体亚结构的影响。为验证表型与基因型的关联性，在选择用于计算主成分分析的样本时，仅选取了非亲属参与者的样本。</p>
 <h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>样本质量控制的代码可在gwas-phenotype-samples-qc.ipynb中找到。使用dx extract_dataset将每个队列的表型数据提取为表格。随后，根据以下标准筛选样本</p>
@@ -280,18 +280,18 @@
 </li>
 </ul>
 <p>table contained 38,197 cases and 298,886 controls.     随后，表型数据与可获得插补数据的样本列表进行了合并。最终生成的表格包含38,197例病例和298,886例对照。</p>
-<h4 id="样本质量控制代码"><a href="#样本质量控制代码" class="headerlink" title="样本质量控制代码"></a>样本质量控制代码</h4><p><img src="/get_qc_02.png" alt="get_qc_02"><img src="/get_qc_01.png" alt="get_qc_01"></p>
-<p><img src="/get_qc_03.png" alt="get_qc_03"></p>
-<p><img src="/get_qc_04.png" alt="get_qc_04"></p>
-<p><img src="/get_qc_05.png" alt="get_qc_05"></p>
-<p><img src="/get_qc_06.png" alt="get_qc_06"></p>
-<p><img src="/get_qc_07.png" alt="get_qc_07"></p>
-<p><img src="/get_qc_08.png" alt="get_qc_08"></p>
+<h4 id="样本质量控制代码"><a href="#样本质量控制代码" class="headerlink" title="样本质量控制代码"></a>样本质量控制代码</h4><p><img src="/2026/03/15/end_to_end_chr19/get_qc_02.png" alt="get_qc_02"><img src="/2026/03/15/end_to_end_chr19/get_qc_01.png" alt="get_qc_01"></p>
+<p><img src="/2026/03/15/end_to_end_chr19/get_qc_03.png" alt="get_qc_03"></p>
+<p><img src="/2026/03/15/end_to_end_chr19/get_qc_04.png" alt="get_qc_04"></p>
+<p><img src="/2026/03/15/end_to_end_chr19/get_qc_05.png" alt="get_qc_05"></p>
+<p><img src="/2026/03/15/end_to_end_chr19/get_qc_06.png" alt="get_qc_06"></p>
+<p><img src="/2026/03/15/end_to_end_chr19/get_qc_07.png" alt="get_qc_07"></p>
+<p><img src="/2026/03/15/end_to_end_chr19/get_qc_08.png" alt="get_qc_08"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jsj0513.top/2026/03/15/end_to_end_chr19/" data-id="cuidsnovVjrHvnNYQOZoEXpKb" data-title="端到端实验chr19的微缩版" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://jsj0513.top/2026/03/15/end_to_end_chr19/" data-id="cuidjzVBjNhMt4KGWfye857c1" data-title="端到端实验chr19的微缩版" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -360,23 +360,23 @@
 <p>sudo docker pull ubuntu</p>
 <p>安装完成之后默认会启动docker服务，如果没有启动和正常服务一样启动就好</p>
 <p>docker version</p>
-<p><img src="/clip_image002.png" alt="docker version"></p>
+<p><img src="/2026/03/15/Docker/clip_image002.png" alt="docker version"></p>
 </li>
 <li><h3 id="使用官方镜像运行容器"><a href="#使用官方镜像运行容器" class="headerlink" title="使用官方镜像运行容器"></a>使用官方镜像运行容器</h3><p>查看下载到本地的所有镜像</p>
 <p>docker images</p>
-<p><img src="/clip_image002-1681821166374-16.png" alt="docker images"></p>
+<p><img src="/2026/03/15/Docker/clip_image002-1681821166374-16.png" alt="docker images"></p>
 <p> 查看容器</p>
 <p> docker ps -a</p>
-<p><img src="/clip_image004.png" alt="查看容器"></p>
+<p><img src="/2026/03/15/Docker/clip_image004.png" alt="查看容器"></p>
 <p>删除镜像</p>
 <p>docker rmi +镜像名</p>
 <p>docker rmi +镜像标签</p>
-<p><img src="/clip_image006.png" alt="删除镜像"></p>
+<p><img src="/2026/03/15/Docker/clip_image006.png" alt="删除镜像"></p>
 <p>下载镜像</p>
 <p>docker pull +镜像名</p>
-<p><img src="/clip_image008.png" alt="下载镜像"></p>
+<p><img src="/2026/03/15/Docker/clip_image008.png" alt="下载镜像"></p>
 <p>查看是否拉入镜像</p>
-<p><img src="/clip_image010.png" alt="查看是否拉入镜像"></p>
+<p><img src="/2026/03/15/Docker/clip_image010.png" alt="查看是否拉入镜像"></p>
 <p>已拉入</p>
 <p>创建容器</p>
 <p>docker create -it cengos:7 &#x2F;bin&#x2F;bash  &#x2F;&#x2F;创建一个新的容器但不启动它 #&#x2F;bin&#x2F;bash 交互   对应的镜像名</p>
@@ -385,15 +385,15 @@
 <p>-t ：  分配一个伪终端</p>
 <p>-d ：  后台守护进程的方式运行</p>
 <p>#去查询容器会发现状态为Created</p>
-<p><img src="/clip_image012.png" alt="查看容器"></p>
+<p><img src="/2026/03/15/Docker/clip_image012.png" alt="查看容器"></p>
 <p>启动容器</p>
 <p>docker start 容器ID</p>
 <p>打开刚刚创建的容器</p>
-<p><img src="/clip_image014.png" alt="启动容器"></p>
+<p><img src="/2026/03/15/Docker/clip_image014.png" alt="启动容器"></p>
 <p>停止容器</p>
 <p>docker stop 容器id</p>
 <p>停止刚刚打开的容器</p>
-<p><img src="/clip_image016.png" alt="停止容器"></p>
+<p><img src="/2026/03/15/Docker/clip_image016.png" alt="停止容器"></p>
 <p>容器已经被停止</p>
 </li>
 <li><h3 id="借助官方镜像构建、运行自己的镜像和容器"><a href="#借助官方镜像构建、运行自己的镜像和容器" class="headerlink" title="借助官方镜像构建、运行自己的镜像和容器"></a>借助官方镜像构建、运行自己的镜像和容器</h3><h4 id="①-建立dockerfile文件"><a href="#①-建立dockerfile文件" class="headerlink" title="① 建立dockerfile文件"></a>① 建立dockerfile文件</h4><p>（1） 新建工作目录dockertest，并新建Dockerfile。使用的命令如下：</p>
@@ -401,9 +401,9 @@
 <p>cd dockertest</p>
 <p>touch Dockerfile </p>
 <p>​       使用ls查看当前目录下的文件</p>
-<p>​        <img src="/clip_image002-1681821353211-25.png" alt="查看当前文件"></p>
+<p>​        <img src="/2026/03/15/Docker/clip_image002-1681821353211-25.png" alt="查看当前文件"></p>
 <p>（2） 使用vim编辑Dockerfile</p>
-<p><img src="/clip_image004-1681821353212-26.png" alt="vim编辑Dockerfile"></p>
+<p><img src="/2026/03/15/Docker/clip_image004-1681821353212-26.png" alt="vim编辑Dockerfile"></p>
 <p>其中，</p>
 <p>  FROM ：定制的镜像都是基于 FROM 的镜像，也就是说，你的docker容器的系统。这里用的是ubuntu:latest，详细用法不再这里介绍，你可以在dockerhub上找其他的镜像。</p>
 <p>  WORKDIR：你的工作目录，当你运行容器后，是一个ubuntu系统，在根目录会建立一个Mydata的目录。</p>
@@ -412,10 +412,10 @@
 <h4 id="②-制作docker镜像"><a href="#②-制作docker镜像" class="headerlink" title="② 制作docker镜像"></a>② 制作docker镜像</h4><p>在有Dockfile的这个目录下，执行该命令:</p>
 <p>​    sudo docker build -t ubuntudocker:new .</p>
 <p>​    由于自建的镜像较大，故只提供部分截图</p>
-<p>​    <img src="/clip_image002-1681821409004-29.png" alt="建立镜像"></p>
+<p>​    <img src="/2026/03/15/Docker/clip_image002-1681821409004-29.png" alt="建立镜像"></p>
 <p>​     可以使用下面的命令浏览有哪些镜像：</p>
-<p><img src="/clip_image004-1681821409005-30.png" alt="浏览镜像"></p>
-<h4 id="③运行docker容器"><a href="#③运行docker容器" class="headerlink" title="③运行docker容器"></a>③运行docker容器</h4><p><img src="/clip_image002-1681821468607-33.png" alt="运行并使用容器"></p>
+<p><img src="/2026/03/15/Docker/clip_image004-1681821409005-30.png" alt="浏览镜像"></p>
+<h4 id="③运行docker容器"><a href="#③运行docker容器" class="headerlink" title="③运行docker容器"></a>③运行docker容器</h4><p><img src="/2026/03/15/Docker/clip_image002-1681821468607-33.png" alt="运行并使用容器"></p>
 <p>内部容器已经可以使用python3.10.6环境</p>
 <p>打包镜像同上</p>
 </li>
@@ -431,7 +431,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jsj0513.top/2026/03/15/Docker/" data-id="cuidMcWFv9h2qOvJYfMcjvRfZ" data-title="Docker环境配置" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://jsj0513.top/2026/03/15/Docker/" data-id="cuidrKIo-MRg015kMWoTtV8vl" data-title="Docker环境配置" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -473,26 +473,26 @@
       
         <h1 id="鱼与熊掌兼得（deeplearning的好处）"><a href="#鱼与熊掌兼得（deeplearning的好处）" class="headerlink" title="鱼与熊掌兼得（deeplearning的好处）"></a>鱼与熊掌兼得（deeplearning的好处）</h1><h2 id="一-两难境地"><a href="#一-两难境地" class="headerlink" title="一.两难境地"></a>一.两难境地</h2><p>在deep learning过程中，对应的参数量过多，可能会造成过拟合的现象，而相反的，参数量过少有可能获得不了比较良好的效果，这让我们进入了两难的境地。</p>
 <h2 id="二-piecewise-linear-分段线性曲线回顾"><a href="#二-piecewise-linear-分段线性曲线回顾" class="headerlink" title="二.piecewise linear(分段线性曲线回顾)"></a>二.piecewise linear(分段线性曲线回顾)</h2><p>分段线性曲线可以看作常数项加上一系列的Z形函数。</p>
-<p><img src="/image-20250902092334684.png" alt="image-20250902092334684"></p>
+<p><img src="/2026/03/15/deeplearning%E9%B1%BC%E4%B8%8E%E7%86%8A%E6%8E%8C%E5%8F%AF%E4%BB%A5%E5%85%BC%E5%BE%97/image-20250902092334684.png" alt="image-20250902092334684"></p>
 <p>而对应的hard sigmoid的一段函数又可以有对应的两端RELU函数进行组合表示。</p>
-<p><img src="/image-20250902092535998.png" alt="image-20250902092535998"></p>
-<h2 id="三-是否深度学习表现更加优异"><a href="#三-是否深度学习表现更加优异" class="headerlink" title="三.是否深度学习表现更加优异"></a>三.是否深度学习表现更加优异</h2><p><img src="/image-20250902092655642.png" alt="image-20250902092655642"></p>
+<p><img src="/2026/03/15/deeplearning%E9%B1%BC%E4%B8%8E%E7%86%8A%E6%8E%8C%E5%8F%AF%E4%BB%A5%E5%85%BC%E5%BE%97/image-20250902092535998.png" alt="image-20250902092535998"></p>
+<h2 id="三-是否深度学习表现更加优异"><a href="#三-是否深度学习表现更加优异" class="headerlink" title="三.是否深度学习表现更加优异"></a>三.是否深度学习表现更加优异</h2><p><img src="/2026/03/15/deeplearning%E9%B1%BC%E4%B8%8E%E7%86%8A%E6%8E%8C%E5%8F%AF%E4%BB%A5%E5%85%BC%E5%BE%97/image-20250902092655642.png" alt="image-20250902092655642"></p>
 <p>可以看到，随着对应的深度学习的层数增加对应的语音识别的错误率也有所降低。</p>
 <p>那么瘦高的神经网络，和矮胖的神经网络哪个更好。</p>
-<p><img src="/image-20250902092819086.png" alt="image-20250902092819086"></p>
+<p><img src="/2026/03/15/deeplearning%E9%B1%BC%E4%B8%8E%E7%86%8A%E6%8E%8C%E5%8F%AF%E4%BB%A5%E5%85%BC%E5%BE%97/image-20250902092819086.png" alt="image-20250902092819086"></p>
 <p>若采取同样的参数量，这里两种神经网络那个更加的优秀。</p>
-<p><img src="/image-20250902092928669.png" alt="image-20250902092928669"></p>
+<p><img src="/2026/03/15/deeplearning%E9%B1%BC%E4%B8%8E%E7%86%8A%E6%8E%8C%E5%8F%AF%E4%BB%A5%E5%85%BC%E5%BE%97/image-20250902092928669.png" alt="image-20250902092928669"></p>
 <p>如图所示，采用相同的参数量，对应的更深的神经网络的表现要明显的优于矮胖的神经网络。</p>
 <p>甚至到最后矮胖的神经网络随着参数的增多，对应的实验效果变得不那么优秀，甚至出现了倒退的行为。</p>
 <h2 id="四-为什么我们需要更深的神经网络。"><a href="#四-为什么我们需要更深的神经网络。" class="headerlink" title="四.为什么我们需要更深的神经网络。"></a>四.为什么我们需要更深的神经网络。</h2><p>的确一层的神经网络可以拟合出任何的函数，但是利用深度学习网络对于效果的提升更加具有效率。例如：逻辑元器件进行组合，采用更深的 组合可以减少器件的数量。在编程的过程中比较深的递归的方法可以很大程度上的节省编程的程序篇幅，增加代码的可读性。</p>
-<p><img src="/image-20250902093439091.png" alt="image-20250902093439091"></p>
-<p>对应的剪纸的过程中，采用折叠的方式也可以类比到神经网络，剪纸的层数增加，从而使工匠对于制作的过程中更加的简洁，节省体力，增加效率。<img src="/image-20250902093612634.png" alt="image-20250902093612634"></p>
-<h2 id="五-总之：：：：："><a href="#五-总之：：：：：" class="headerlink" title="五.总之：：：：："></a>五.总之：：：：：</h2><p><img src="/image-20250902093655940.png" alt="image-20250902093655940"></p>
+<p><img src="/2026/03/15/deeplearning%E9%B1%BC%E4%B8%8E%E7%86%8A%E6%8E%8C%E5%8F%AF%E4%BB%A5%E5%85%BC%E5%BE%97/image-20250902093439091.png" alt="image-20250902093439091"></p>
+<p>对应的剪纸的过程中，采用折叠的方式也可以类比到神经网络，剪纸的层数增加，从而使工匠对于制作的过程中更加的简洁，节省体力，增加效率。<img src="/2026/03/15/deeplearning%E9%B1%BC%E4%B8%8E%E7%86%8A%E6%8E%8C%E5%8F%AF%E4%BB%A5%E5%85%BC%E5%BE%97/image-20250902093612634.png" alt="image-20250902093612634"></p>
+<h2 id="五-总之：：：：："><a href="#五-总之：：：：：" class="headerlink" title="五.总之：：：：："></a>五.总之：：：：：</h2><p><img src="/2026/03/15/deeplearning%E9%B1%BC%E4%B8%8E%E7%86%8A%E6%8E%8C%E5%8F%AF%E4%BB%A5%E5%85%BC%E5%BE%97/image-20250902093655940.png" alt="image-20250902093655940"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jsj0513.top/2026/03/15/deeplearning%E9%B1%BC%E4%B8%8E%E7%86%8A%E6%8E%8C%E5%8F%AF%E4%BB%A5%E5%85%BC%E5%BE%97/" data-id="cuid2H_3N_8yykFvVrfMIkaSk" data-title="deeplearning 鱼与熊掌可以兼得" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://jsj0513.top/2026/03/15/deeplearning%E9%B1%BC%E4%B8%8E%E7%86%8A%E6%8E%8C%E5%8F%AF%E4%BB%A5%E5%85%BC%E5%BE%97/" data-id="cuidV8f3UQMH7cUNfdzmHrB_Y" data-title="deeplearning 鱼与熊掌可以兼得" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -532,38 +532,38 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p><img src="/image-20250901110303393.png" alt="CNN"></p>
+        <p><img src="/2026/03/15/CNN/image-20250901110303393.png" alt="CNN"></p>
 <h1 id="CNN的主要流程"><a href="#CNN的主要流程" class="headerlink" title="CNN的主要流程"></a>CNN的主要流程</h1><h2 id="①规格化图片"><a href="#①规格化图片" class="headerlink" title="①规格化图片"></a>①规格化图片</h2><p>在运行训练过程之前们需要将所有的图片<strong>scale</strong>成大小一样的对应图片，最终cross entropy越小越好，对应的误差也就越小。</p>
 <p>模型的输入是对应的图片是一个三维矩阵，对应的前两位是<strong>对应的像素点的位置</strong>。而第三维是对应的<strong>rgb</strong>的一个3元数组，经过三维方向的拉直，形成一个可以用来训练的向量集合。</p>
-<p><img src="/image-20250901111401812.png" alt="image-20250901111401812"></p>
+<p><img src="/2026/03/15/CNN/image-20250901111401812.png" alt="image-20250901111401812"></p>
 <p><strong>对应的机器和人都是会产生差异的</strong>，人和机器都是去寻找对应的图片中生物的特征之后就将这样的特征与人们所熟知的生物特征进行比对，形成结论，但是有可能出现错误。</p>
-<p><img src="/image-20250901111606390.png" alt="image-20250901111606390"></p>
+<p><img src="/2026/03/15/CNN/image-20250901111606390.png" alt="image-20250901111606390"></p>
 <p>例如如上的图片，无论是人还是机器都会将其识别成一个鸟类：乌鸦，但是实际上这是一只猫，一只黑猫</p>
 <h2 id="②分区"><a href="#②分区" class="headerlink" title="②分区"></a>②分区</h2><p>观察自己的小范围去判断特征，这是每一个neuron所作的事情。</p>
 <p>将对应的小范围进行拉直，作为输入，之后利用多层的运算形成最终的判断。对应的范围的属性与分布是可以根据实际情况进行灵活调整的。多个范围之间可以进行重叠，亦可以两个神经元去守备同一块的范围，非正方形的范围也是可取的。理论上对应的范围也是可以不相连的。但是实际的图像识别中很难利用的上</p>
-<p><img src="/image-20250901112216965.png" alt="image-20250901112216965"></p>
+<p><img src="/2026/03/15/CNN/image-20250901112216965.png" alt="image-20250901112216965"></p>
 <h2 id="③最经典的设计"><a href="#③最经典的设计" class="headerlink" title="③最经典的设计"></a>③最经典的设计</h2><p>对应的所有的<strong>channel</strong>都参与识别但是对应的小区域的范围很小，每个区域用一个neuron去守备，移动的范围叫做<strong>stride也就是步长</strong>，对应的步长使对应的每个区域有一个维度的重叠。</p>
-<p><img src="/image-20250901112720454.png" alt="image-20250901112720454"></p>
+<p><img src="/2026/03/15/CNN/image-20250901112720454.png" alt="image-20250901112720454"></p>
 <p>超出对应的图的范围就用零进行补齐（其余的方式也是可取的）按照这种方式去守备整个图片。</p>
 <h2 id="④一个小问题"><a href="#④一个小问题" class="headerlink" title="④一个小问题"></a>④一个小问题</h2><p>同样的pattern可能出现在图片的不同的位置，但是扫描是无死角的，总是会被探测出来的，不一定所有的区域都要加上对应的部位的检测</p>
 <p>**解决方法：**共享参数，对应的两个神经元的权重矩阵完全相同，由于对应的部位不同，所以对应位置的识别的结果也是客观的。</p>
 <p>**注意：**不能让守备同一块区域的神经元共享参数，会造成相同的结果，没有任何意义。</p>
 <h2 id="⑤常见的共享参数的设定方法"><a href="#⑤常见的共享参数的设定方法" class="headerlink" title="⑤常见的共享参数的设定方法"></a>⑤常见的共享参数的设定方法</h2><p>不同的参数则代表守备的生物的部位是不同的，对应的参数集合叫做<strong>filter</strong>，也就是<strong>筛选器</strong></p>
-<p><img src="/image-20250901113523317.png" alt="image-20250901113523317"></p>
+<p><img src="/2026/03/15/CNN/image-20250901113523317.png" alt="image-20250901113523317"></p>
 <p><strong>对应的卷积神经网络的优势</strong>：</p>
 <p>对应的范围越大，对应的弹性就越大，就越容易出现overfitting，过拟合。filter可以利用矩阵相对应位置相乘再加和。</p>
 <h2 id="⑥pooling-压缩"><a href="#⑥pooling-压缩" class="headerlink" title="⑥pooling(压缩)"></a>⑥pooling(压缩)</h2><p>大的图片识别的时候可以压缩成小的图片，本身没有参数，是一个设定好的部件。</p>
 <p><strong>Max pooling</strong></p>
 <p>分组选择代表，可以选择最大的当代表，卷积神经网络需要与pooling进行交替使用</p>
 <h2 id="⑦flatten"><a href="#⑦flatten" class="headerlink" title="⑦flatten"></a>⑦flatten</h2><p>会将对应的矩阵进行拉直，判断最终的类别之前需要做这样的动作。</p>
-<h2 id="⑧总体流程"><a href="#⑧总体流程" class="headerlink" title="⑧总体流程"></a>⑧总体流程</h2><p><img src="/image-20250901114137921.png" alt="image-20250901114137921"></p>
+<h2 id="⑧总体流程"><a href="#⑧总体流程" class="headerlink" title="⑧总体流程"></a>⑧总体流程</h2><p><img src="/2026/03/15/CNN/image-20250901114137921.png" alt="image-20250901114137921"></p>
 <p><strong>注意</strong>：对应的pooling的工作会对最终结果造成影响，但是可以减少计算量。部分的问题是不可以使用pooling的,比如对应的围棋对弈的问题。</p>
-<p><img src="/image-20250901114308100.png" alt="image-20250901114308100"></p>
+<p><img src="/2026/03/15/CNN/image-20250901114308100.png" alt="image-20250901114308100"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jsj0513.top/2026/03/15/CNN/" data-id="cuidwWfI4wuJZyWvYPwurRXLI" data-title="CNN" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://jsj0513.top/2026/03/15/CNN/" data-id="cuidCeOhGBQwmj3vW_NqGCE4J" data-title="CNN" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -643,7 +643,7 @@
 <td></td>
 </tr>
 <tr>
-<td align="center">实验步骤与内容：  1. 安装VWware Workstation  官方正版VMware下载（16 pro）：我用的是阿里云盘传输下载，速度较快    下载Linux系统镜像，来源同上    安装：选一下安装地址，一直下一步即可。  <img src="/clip_image002.jpg" alt="img">  新建虚拟机  现在我们就相当于买电脑，先把电脑配置整好。什么cpu啊内存条啊硬盘啊什么乱七八糟的，先不着急装系统。  Linux版本选的是GenOS7 64位。  一路默认  地址选在D盘  安装操作系统 选择镜像位置然后确认  打开虚拟机 读完秒后  选择简体中文  修改安装方式 选择GNOME桌面然后点完成  然后加一个默认的安装位置  开启网络连接  设置root密码和用户名密码  安装后重启 接受协议  安装配置进入界面  2. 并配置网络连接，使其能够与本地计算机互相通信  打开虚拟网络编辑器打开NAT模式  <img src="/clip_image004.png" alt="img">  在面板-》虚拟机-》配置（一定要选择某台虚拟机，否则设置会变为灰色）  <img src="/clip_image006.png" alt="img">  虚拟机内设置IP&#x2F;静态&#x2F;网关&#x2F;DNS  主机VMnet8的IP  <img src="/clip_image008.png" alt="img">  主机连接网络的DNS(软件网络服务)     <img src="/clip_image010.png" alt="img">  虚拟机内IP相关配置设置  vi &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens33  例如：  6.重启network服务,配置生效  双方可ping通  网络连接完成     3.设置共享文件夹  选择待处理虚拟机，右键设置  在虚拟机设置 窗口：选择 选项–》点击 共享文件夹；文件夹共享 选择总是启用     在文件夹 ：添加共享目录； 弹出窗口 点击下一步–》设置共享文件夹目录 地址、共享文件夹名称 —》启用此共享 –》完成。 虚拟机设置完成。  <img src="/clip_image012.png" alt="img">  3. 挂载  上述步骤完毕后，CentOS6会自动在&#x2F;mnt目录下挂载共享目录，但是CentOS7需要手动挂载。     1、在Centos 桌面打开终端（或者使用 XShell ：直接连接上就好)     2、查看共享目录情况  命令： vmware-hgfsclient  如果这是第一次设置共享目录， centos 7 需要创建文件夹在 &#x2F;mnt 下创建 &#x2F;hgfs  自动挂载：让虚拟机系统每次启动完成，自动挂载虚拟机已经设置的共享目录。在&#x2F;etc&#x2F;fstab文件中添加挂载目录  在打开的文件中 添加 ：  .host:&#x2F;共享文件名  &#x2F;mnt&#x2F;hgfs fuse.vmhgfs-fuse allow_other,defaults 0 0　  mount -a生效</td>
+<td align="center">实验步骤与内容：  1. 安装VWware Workstation  官方正版VMware下载（16 pro）：我用的是阿里云盘传输下载，速度较快    下载Linux系统镜像，来源同上    安装：选一下安装地址，一直下一步即可。  <img src="/2026/03/15/4/clip_image002.jpg" alt="img">  新建虚拟机  现在我们就相当于买电脑，先把电脑配置整好。什么cpu啊内存条啊硬盘啊什么乱七八糟的，先不着急装系统。  Linux版本选的是GenOS7 64位。  一路默认  地址选在D盘  安装操作系统 选择镜像位置然后确认  打开虚拟机 读完秒后  选择简体中文  修改安装方式 选择GNOME桌面然后点完成  然后加一个默认的安装位置  开启网络连接  设置root密码和用户名密码  安装后重启 接受协议  安装配置进入界面  2. 并配置网络连接，使其能够与本地计算机互相通信  打开虚拟网络编辑器打开NAT模式  <img src="/2026/03/15/4/clip_image004.png" alt="img">  在面板-》虚拟机-》配置（一定要选择某台虚拟机，否则设置会变为灰色）  <img src="/2026/03/15/4/clip_image006.png" alt="img">  虚拟机内设置IP&#x2F;静态&#x2F;网关&#x2F;DNS  主机VMnet8的IP  <img src="/2026/03/15/4/clip_image008.png" alt="img">  主机连接网络的DNS(软件网络服务)     <img src="/2026/03/15/4/clip_image010.png" alt="img">  虚拟机内IP相关配置设置  vi &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens33  例如：  6.重启network服务,配置生效  双方可ping通  网络连接完成     3.设置共享文件夹  选择待处理虚拟机，右键设置  在虚拟机设置 窗口：选择 选项–》点击 共享文件夹；文件夹共享 选择总是启用     在文件夹 ：添加共享目录； 弹出窗口 点击下一步–》设置共享文件夹目录 地址、共享文件夹名称 —》启用此共享 –》完成。 虚拟机设置完成。  <img src="/2026/03/15/4/clip_image012.png" alt="img">  3. 挂载  上述步骤完毕后，CentOS6会自动在&#x2F;mnt目录下挂载共享目录，但是CentOS7需要手动挂载。     1、在Centos 桌面打开终端（或者使用 XShell ：直接连接上就好)     2、查看共享目录情况  命令： vmware-hgfsclient  如果这是第一次设置共享目录， centos 7 需要创建文件夹在 &#x2F;mnt 下创建 &#x2F;hgfs  自动挂载：让虚拟机系统每次启动完成，自动挂载虚拟机已经设置的共享目录。在&#x2F;etc&#x2F;fstab文件中添加挂载目录  在打开的文件中 添加 ：  .host:&#x2F;共享文件名  &#x2F;mnt&#x2F;hgfs fuse.vmhgfs-fuse allow_other,defaults 0 0　  mount -a生效</td>
 <td></td>
 <td></td>
 <td></td>
@@ -665,7 +665,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jsj0513.top/2026/03/15/4/" data-id="cuidMDmXBOAmNR3fbrMhyzQLi" data-title="虚拟机网络配置和共享文件夹" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://jsj0513.top/2026/03/15/4/" data-id="cuid46ESJrxpA0OUkzVPvCXZI" data-title="虚拟机网络配置和共享文件夹" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -712,9 +712,9 @@
 <h3 id="软件环境："><a href="#软件环境：" class="headerlink" title="软件环境："></a>软件环境：</h3><p>Linux</p>
 <h3 id="实验步骤与内容："><a href="#实验步骤与内容：" class="headerlink" title="实验步骤与内容："></a>实验步骤与内容：</h3><h4 id="1-了解linux"><a href="#1-了解linux" class="headerlink" title="1.了解linux"></a>1.了解linux</h4><p>Linux，全称GNU&#x2F;Linux，是一种免费使用和自由传播的类UNIX操作系统，其内核由林纳斯·本纳第克特·托瓦兹于1991年10月5日首次发布，它主要受到Minix和Unix思想的启发，是一个基于POSIX的多用户、多任务、支持多线程和多CPU的操作系统。它能运行主要的Unix工具软件、应用程序和网络协议。它支持32位和64位硬件。Linux继承了Unix以网络为核心的设计思想，是一个性能稳定的多用户网络操作系统。Linux有上百种不同的发行版，如基于社区开发的debian、archlinux，和基于商业开发的Red Hat Enterprise Linux、SUSE、Oracle Linux等。</p>
 <h4 id="2-浏览文件和创建文件"><a href="#2-浏览文件和创建文件" class="headerlink" title="2.浏览文件和创建文件"></a>2.浏览文件和创建文件</h4><p>ls可以浏览当前文件夹的所有文件vi可以浏览文件之间的具体内容</p>
-<p><img src="/1.png" alt="1.浏览文件夹内容"></p>
+<p><img src="/2026/03/15/1/1.png" alt="1.浏览文件夹内容"></p>
 <p>vi test</p>
-<p><img src="/2.png" alt="2.浏览文件内容"></p>
+<p><img src="/2026/03/15/1/2.png" alt="2.浏览文件内容"></p>
 <h4 id="3-安装程序"><a href="#3-安装程序" class="headerlink" title="3.安装程序"></a>3.安装程序</h4><h5 id="一、-源码编译安装（二进制安装）"><a href="#一、-源码编译安装（二进制安装）" class="headerlink" title="一、 源码编译安装（二进制安装）"></a>一、 源码编译安装（二进制安装）</h5><p>程序：由开发人员写代码一个一个单词敲出来的</p>
 <p>源码：编写好的.c.java文件</p>
 <p>编译：将人类写的代码翻译成二进制语言</p>
@@ -750,7 +750,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jsj0513.top/2026/03/15/1/" data-id="cuid97K5rtHkIdvLTQw_VDMFj" data-title="Linux环境基本操作练习" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://jsj0513.top/2026/03/15/1/" data-id="cuidm-6LcB5OG0hYa7nI4P4jz" data-title="Linux环境基本操作练习" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -803,7 +803,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jsj0513.top/2026/03/14/hello-world/" data-id="cuid4MeGTrMaPj3sFDTKxfDPR" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://jsj0513.top/2026/03/14/hello-world/" data-id="cuidWLu7O1rRIvnd4uD4KBTkn" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -849,28 +849,28 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">举例说明：假设你在图书馆里，你想找一本关于&quot;如何暴富&quot;的书。你的查询（Query）就是&quot;如何暴富&quot;。 图书馆的图书管理员就像是自注意力机制，他们需要根据你的查询（Query）在图书馆的大量书籍中找到相关的书。每一本书都有一个书名，这就是键（Key）。图书管理员会比较你的查询（Query）和每一本书的键（Key），也就是查询内容“如何暴富”和每一本书名进行比较，以确定哪些书与你的查询相关。 每一本书都有一些具体的信息，比如书的内容、作者等，这就是值（Value）。一旦图书管理员找到了与你的查询（Query）匹配的键（Key），他们就会给你那本书的值（Value），也就是你想要的书。</span><br></pre></td></tr></table></figure>
 
 <p>当模型处理一个词（比如“games”）时，他会生成一个查询（QUERY).然后，模型会比较这个查询和其他所有词的键，以确定那些词与当前处理的词相关。最后，模型会根据这些相关词的值来更新当前处理的词的表示。所以，当模型处理”Games”这个词时，它可能会发现”2022”、”Beijing”和”Winter”这些词的键（Key）与”Games”的查询（Query）匹配，然后，模型就会考虑这些词的值，从而理解到“Game”这里并不是指一般的”游戏“,而是指特定的比赛，并且这个比赛是在”2022年”、在”北京”举行的”冬季奥运会”。</p>
-<h4 id="过程说明："><a href="#过程说明：" class="headerlink" title="过程说明："></a><strong>过程说明：</strong></h4><p><img src="/v2-403853c29f71b668bd1856b08e1cc3b4_1440w-1773562505711-1.jpg" alt="img"></p>
+<h4 id="过程说明："><a href="#过程说明：" class="headerlink" title="过程说明："></a><strong>过程说明：</strong></h4><p><img src="/2025/10/24/%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/v2-403853c29f71b668bd1856b08e1cc3b4_1440w-1773562505711-1.jpg" alt="img"></p>
 <p>注意力权重就是值向量</p>
 <ol>
 <li><p>**计算查询、键、值：**对于输入序列中的每个元素，我们都会计算一个查询向量、一个键向量和一个值向量。<strong>这些向量是通过学习得到的权重矩阵</strong>与输入元素的线性变换得到的。 假设我们的输入序列为权重矩阵为</p>
-<img src="/image-20251024193430127.png" alt="image-20251024193430127" style="zoom: 67%;" />
+<img src="/2025/10/24/%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/image-20251024193430127.png" alt="image-20251024193430127" style="zoom: 67%;">
 
-<p>那么对于每个元素我们有，<img src="/image-20251024193506001.png" alt="image-20251024193506001"> 其中<img src="/image-20251024193527578.png" alt="image-20251024193527578">分别表示第个元素的查询、键和值向量。（从矩阵中进行线性组合（一个元素有一个向量)这个向量与矩阵相乘会获得每个矩阵的查询向量。</p>
+<p>那么对于每个元素我们有，<img src="/2025/10/24/%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/image-20251024193506001.png" alt="image-20251024193506001"> 其中<img src="/2025/10/24/%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/image-20251024193527578.png" alt="image-20251024193527578">分别表示第个元素的查询、键和值向量。（从矩阵中进行线性组合（一个元素有一个向量)这个向量与矩阵相乘会获得每个矩阵的查询向量。</p>
 </li>
-<li><p>计算注意力分数: 对于每一对元素<img src="/image-20251024193736926.png" alt="image-20251024193736926">, 我们计算一个注意力 分数, 表示 对 的注意力程度。</p>
+<li><p>计算注意力分数: 对于每一对元素<img src="/2025/10/24/%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/image-20251024193736926.png" alt="image-20251024193736926">, 我们计算一个注意力 分数, 表示 对 的注意力程度。</p>
 </li>
-<li><p>注意力分数是通过查询向量 和键向量的点积, 然后再除以一个缩放因子（通常是键向量维度的平方根) 得到的: <img src="/image-20251024193942105.png" alt="image-20251024193942105" style="zoom: 50%;" />其中 <img src="/image-20251024194025621.png" alt="image-20251024194025621">是键向量的维度。</p>
+<li><p>注意力分数是通过查询向量 和键向量的点积, 然后再除以一个缩放因子（通常是键向量维度的平方根) 得到的: <img src="/2025/10/24/%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/image-20251024193942105.png" alt="image-20251024193942105" style="zoom: 50%;">其中 <img src="/2025/10/24/%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/image-20251024194025621.png" alt="image-20251024194025621">是键向量的维度。</p>
 </li>
-<li><p>计算注意力权重: 然后, 我们通过 softmax 函数使得注意力分数转为化0和1之前的数值且和为1，进而得出注意力权重, : <img src="/image-20251024194100666.png" alt="image-20251024194100666" style="zoom:50%;" />用自然对数</p>
+<li><p>计算注意力权重: 然后, 我们通过 softmax 函数使得注意力分数转为化0和1之前的数值且和为1，进而得出注意力权重, : <img src="/2025/10/24/%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/image-20251024194100666.png" alt="image-20251024194100666" style="zoom:50%;">用自然对数</p>
 </li>
-<li><p>计算输出: 最后, 我们将每个元素的值向量与其对应的注意力权 重相乘, 然后求和, 得到最终的输出: <img src="/image-20251024194222275.png" alt="image-20251024194222275">这些权重会被用来组合输入的词向量，生成一个新的上下文相关的词向量。这个词向量不仅包含了当前词的信息，还包含了其上下文的信息。这样，模型就能更好地理解每个词在具体上下文中的含义。</p>
+<li><p>计算输出: 最后, 我们将每个元素的值向量与其对应的注意力权 重相乘, 然后求和, 得到最终的输出: <img src="/2025/10/24/%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/image-20251024194222275.png" alt="image-20251024194222275">这些权重会被用来组合输入的词向量，生成一个新的上下文相关的词向量。这个词向量不仅包含了当前词的信息，还包含了其上下文的信息。这样，模型就能更好地理解每个词在具体上下文中的含义。</p>
 </li>
 </ol>
-<h4 id="多头注意力机制"><a href="#多头注意力机制" class="headerlink" title="多头注意力机制"></a>多头注意力机制</h4><p><img src="/v2-9e1eb58a851d1b6418e3fa3a8a30f18f_1440w.jpg" alt="img"></p>
+<h4 id="多头注意力机制"><a href="#多头注意力机制" class="headerlink" title="多头注意力机制"></a>多头注意力机制</h4><p><img src="/2025/10/24/%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/v2-9e1eb58a851d1b6418e3fa3a8a30f18f_1440w.jpg" alt="img"></p>
 <p>在多头注意力机制中，输入数据首先会被分成多个“头”（每个头包含若干个单词，以机器翻译为主），每个“头”都有自己的查询（Query）、键（Key）和值（Value）向量。每个头都会独立地进行自注意力计算，得到自己的注意力输出，计算过程与上面描述一致，最后将这些输出$z_i$拼接在一起，形成最终的输出。</p>
-<p><img src="/image-20251024194535797.png" alt="image-20251024194535797"></p>
-<p>其中，<img src="/image-20251024194640002.png" alt="image-20251024194640002">是输出权重矩阵，<img src="/image-20251024194655618.png" alt="image-20251024194655618">是拼接操作。</p>
-<p><img src="/image-20251024194818057.png" alt="image-20251024194818057">函数的作用是将多个向量或矩阵在某一维度上进行拼接。在多头注意力机制中，<img src="/image-20251024194823304.png" alt="image-20251024194823304"> 函数用于将每个头的注意力输出向量拼接成一个大的向量。</p>
+<p><img src="/2025/10/24/%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/image-20251024194535797.png" alt="image-20251024194535797"></p>
+<p>其中，<img src="/2025/10/24/%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/image-20251024194640002.png" alt="image-20251024194640002">是输出权重矩阵，<img src="/2025/10/24/%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/image-20251024194655618.png" alt="image-20251024194655618">是拼接操作。</p>
+<p><img src="/2025/10/24/%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/image-20251024194818057.png" alt="image-20251024194818057">函数的作用是将多个向量或矩阵在某一维度上进行拼接。在多头注意力机制中，<img src="/2025/10/24/%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/image-20251024194823304.png" alt="image-20251024194823304"> 函数用于将每个头的注意力输出向量拼接成一个大的向量。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">具体来说，假设我们有h个头，每个头的注意力输出是一个d维的向量，那么通过 </span><br><span class="line"> textConcat函数拼接后，我们会得到一个 h*d 维的向量。这个大的向量包含了所有头的注意力输出信息。 可以让模型同时考虑到所有头的信息。因为每个头可能关注输入序列的不同部分，所以通过拼接，我们可以将这些不同的信息整合在一起，从而得到一个更全面的表示。</span><br></pre></td></tr></table></figure>
 
 <p>多头注意力机制的优点是可以让模型同时关注输入序列的不同位置，从而捕捉更丰富的信息。例如，在处理自然语言时，模型可能需要同时关注一个句子中的主语和宾语，以理解句子的含义。通过多头注意力机制，模型可以在每个头中关注句子的不同部分，从而更好地理解句子的含义。</p>
@@ -880,7 +880,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jsj0513.top/2025/10/24/%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/" data-id="cuidoeEMQEdpJ_PBZHrbqNA22" data-title="自注意力机制" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://jsj0513.top/2025/10/24/%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/" data-id="cuidi1QJQTakpRjrsp_nyZwUS" data-title="自注意力机制" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
