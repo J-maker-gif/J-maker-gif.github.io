@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="计算机组成">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://jsj0513.top/v2-403853c29f71b668bd1856b08e1cc3b4_1440w.jpg">
+<meta property="og:image" content="http://jsj0513.top/v2-403853c29f71b668bd1856b08e1cc3b4_1440w-1773562505711-1.jpg">
 <meta property="og:image" content="http://jsj0513.top/image-20251024193430127.png">
 <meta property="og:image" content="http://jsj0513.top/image-20251024193506001.png">
 <meta property="og:image" content="http://jsj0513.top/image-20251024193527578.png">
@@ -29,11 +29,11 @@
 <meta property="og:image" content="http://jsj0513.top/image-20251024194818057.png">
 <meta property="og:image" content="http://jsj0513.top/image-20251024194823304.png">
 <meta property="article:published_time" content="2025-10-24T12:07:00.000Z">
-<meta property="article:modified_time" content="2025-10-24T12:08:59.437Z">
+<meta property="article:modified_time" content="2026-03-15T08:15:10.050Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="自注意力机制">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://jsj0513.top/v2-403853c29f71b668bd1856b08e1cc3b4_1440w.jpg">
+<meta name="twitter:image" content="http://jsj0513.top/v2-403853c29f71b668bd1856b08e1cc3b4_1440w-1773562505711-1.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -124,7 +124,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">举例说明：假设你在图书馆里，你想找一本关于&quot;如何暴富&quot;的书。你的查询（Query）就是&quot;如何暴富&quot;。 图书馆的图书管理员就像是自注意力机制，他们需要根据你的查询（Query）在图书馆的大量书籍中找到相关的书。每一本书都有一个书名，这就是键（Key）。图书管理员会比较你的查询（Query）和每一本书的键（Key），也就是查询内容“如何暴富”和每一本书名进行比较，以确定哪些书与你的查询相关。 每一本书都有一些具体的信息，比如书的内容、作者等，这就是值（Value）。一旦图书管理员找到了与你的查询（Query）匹配的键（Key），他们就会给你那本书的值（Value），也就是你想要的书。</span><br></pre></td></tr></table></figure>
 
 <p>当模型处理一个词（比如“games”）时，他会生成一个查询（QUERY).然后，模型会比较这个查询和其他所有词的键，以确定那些词与当前处理的词相关。最后，模型会根据这些相关词的值来更新当前处理的词的表示。所以，当模型处理”Games”这个词时，它可能会发现”2022”、”Beijing”和”Winter”这些词的键（Key）与”Games”的查询（Query）匹配，然后，模型就会考虑这些词的值，从而理解到“Game”这里并不是指一般的”游戏“,而是指特定的比赛，并且这个比赛是在”2022年”、在”北京”举行的”冬季奥运会”。</p>
-<h4 id="过程说明："><a href="#过程说明：" class="headerlink" title="过程说明："></a><strong>过程说明：</strong></h4><p><img src="/v2-403853c29f71b668bd1856b08e1cc3b4_1440w.jpg" alt="img"></p>
+<h4 id="过程说明："><a href="#过程说明：" class="headerlink" title="过程说明："></a><strong>过程说明：</strong></h4><p><img src="/v2-403853c29f71b668bd1856b08e1cc3b4_1440w-1773562505711-1.jpg" alt="img"></p>
 <p>注意力权重就是值向量</p>
 <ol>
 <li><p>**计算查询、键、值：**对于输入序列中的每个元素，我们都会计算一个查询向量、一个键向量和一个值向量。<strong>这些向量是通过学习得到的权重矩阵</strong>与输入元素的线性变换得到的。 假设我们的输入序列为权重矩阵为</p>
